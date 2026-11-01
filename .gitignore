@@ -41,3 +41,4 @@ reports/*.csv
 .DS_Store
 Thumbs.db
 !rag/corpus/README.md
+grpo.log
