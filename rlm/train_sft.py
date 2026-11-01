@@ -41,7 +41,17 @@ def load_sft_dataset(path: str | Path):
         },
         remove_columns=dataset.column_names,
     )
+def split_train_eval(dataset, eval_fraction: float, seed: int):
+    """Mejora 'tu turno' #3: reserva una pequeña porción para vigilar overfitting.
 
+    Con un dataset tan pequeño (unos cientos de trazas verificadas) es fácil
+    que el modelo memorice en vez de generalizar; un eval split barato deja
+    verlo en las curvas de `eval_loss` sin gastar ningún dato de más.
+    """
+    if eval_fraction <= 0:
+        return dataset, None
+    split = dataset.train_test_split(test_size=eval_fraction, seed=seed)
+    return split["train"], split["test"]
 
 def train(args: argparse.Namespace) -> None:
     import torch
@@ -73,6 +83,8 @@ def train(args: argparse.Namespace) -> None:
         model_init_kwargs={"dtype": torch.bfloat16 if torch.cuda.is_available() else torch.float32},
         # Tu turno: consider `packing=True` for throughput, `assistant_only_loss=True` if your
         # chat template supports it, and a small eval split to watch for over-fitting.
+        packing=True,
+        assistant_only_loss=True,
     )
     trainer = SFTTrainer(
         model=args.model,
@@ -100,6 +112,11 @@ def main() -> None:
     parser.add_argument("--grad-accum", type=int, default=4)
     parser.add_argument("--max-length", type=int, default=2048)
     parser.add_argument("--lora-rank", type=int, default=16)
+    parser.add_argument(
+        "--eval-fraction", type=float, default=0.05,
+        help="fraction of verified traces held out to watch for overfitting (0 disables it)",
+    )
+    parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--resume-from-checkpoint", default=None, help="checkpoint-XXX folder")
     train(parser.parse_args())
 

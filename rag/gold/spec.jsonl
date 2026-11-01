@@ -1,0 +1,21 @@
+{"question": "¿De cuánto tiempo dispone un cliente para echarse atrás tras firmar un crédito al consumo?", "source": "ley", "all": ["catorce días naturales"]}
+{"question": "¿Cuál es el máximo que puede cobrar el prestamista por cancelar el préstamo antes de tiempo si queda más de un año de vida al contrato?", "source": "ley", "all": ["1 por 100", "reembolsado anticipadamente"]}
+{"question": "¿Y si al contrato le queda un año o menos cuando se amortiza anticipadamente?", "source": "ley", "all": ["0,5 por 100", "reembolsado anticipadamente"]}
+{"question": "¿Por debajo de qué importe un préstamo queda fuera de la ley de crédito al consumo?", "source": "ley", "all": ["inferior a 200 euros"]}
+{"question": "¿Qué ocurre con la aplicación de la ley a los créditos de importe muy elevado?", "source": "ley", "all": ["superior a 75.000 euros"]}
+{"question": "¿Qué debe comprobar el prestamista antes de conceder el crédito sobre la capacidad de pago del cliente?", "source": "ley", "all": ["antes de que se celebre el contrato", "evaluar la solvencia"]}
+{"question": "¿Cómo se define la TAE en términos de lo que mide?", "source": "ley", "all": ["porcentaje anual", "importe total del crédito"]}
+{"question": "¿Qué conceptos forman parte del coste total del crédito para el consumidor?", "source": "ley", "all": ["todos los gastos", "comisiones"]}
+{"question": "¿Hasta cuándo valen las cifras del cuadro de amortización que recibe el cliente?", "source": "ley", "all": ["cuadro", "modificación del tipo deudor"]}
+{"question": "¿Cómo se gradúan las consecuencias cuando el documento del contrato contiene datos inexactos?", "source": "ley", "all": ["se modularán"]}
+{"question": "¿Qué debe informarse al cliente sobre penalizaciones, gastos o intereses de demora?", "source": "ley", "all": ["intereses de demora"]}
+{"question": "¿Qué datos debe incluir la publicidad que mencione un tipo de interés o cifras del coste?", "source": "ley", "all": ["publicidad", "TAE"]}
+{"question": "¿Qué deben establecer los Estados respecto a los procedimientos con los que el prestamista analiza la solvencia?", "source": "directiva", "all": ["establezca procedimientos", "evaluación"]}
+{"question": "¿Qué formación se exige a quien ofrece servicios adicionales junto con el crédito?", "source": "directiva", "all": ["servicios accesorios", "nivel adecuado de conocimientos"]}
+{"question": "¿Qué debe describir el contrato en cuanto a pagar el préstamo antes de su vencimiento?", "source": "directiva", "all": ["reembolso anticipado", "descripción de las condiciones"]}
+{"question": "¿Qué plazo de arrepentimiento reconoce la directiva europea al consumidor?", "source": "directiva", "all": ["catorce días naturales", "desistir del contrato"]}
+{"question": "¿Cómo se protege al cliente cuando la decisión de concederle crédito la toma un sistema automático?", "source": "directiva", "all": ["tratamiento automatizado", "intervención humana"]}
+{"question": "¿Qué medidas se prevén para clientes que tienen problemas para pagar?", "source": "directiva", "all": ["dificultades financieras"]}
+{"question": "¿Se consideran las redes sociales una fuente externa de datos para evaluar la solvencia?", "source": "directiva", "all": ["redes sociales"]}
+{"question": "¿Cómo trata la directiva los créditos sin intereses ni gastos?", "source": "directiva", "all": ["sin intereses"]}
+{"question": "¿Hay que fijar un límite máximo al coste total del crédito en los Estados miembros?", "source": "directiva", "all": ["TAE", "máximo"]}

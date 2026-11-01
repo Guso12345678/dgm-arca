@@ -38,7 +38,10 @@ def group_advantages(rewards: torch.Tensor, eps: float = 1e-4, scale: bool = Tru
         Advantages with shape ``(G,)``. A positive advantage means "better than the group".
     """
     # Tu turno.
-    raise NotImplementedError
+    centered = rewards - rewards.mean()
+    if not scale:
+        return centered
+    return centered / (rewards.std() + eps)
 
 
 def policy_ratio(logp_new: torch.Tensor, logp_old: torch.Tensor) -> torch.Tensor:
@@ -47,7 +50,7 @@ def policy_ratio(logp_new: torch.Tensor, logp_old: torch.Tensor) -> torch.Tensor
     Both inputs have shape ``(G, T)``. Return a tensor of the same shape.
     """
     # Tu turno.
-    raise NotImplementedError
+    return torch.exp(logp_new - logp_old)
 
 
 def clipped_objective(
@@ -64,7 +67,10 @@ def clipped_objective(
         Per-token objective, shape ``(G, T)``, *before* masking and averaging.
     """
     # Tu turno.
-    raise NotImplementedError
+    adv = advantages.unsqueeze(-1)  # (G,) -> (G, 1), broadcast sobre T
+    unclipped = ratio * adv
+    clipped = torch.clamp(ratio, 1 - epsilon, 1 + epsilon) * adv
+    return torch.minimum(unclipped, clipped)
 
 
 def kl_penalty(logp_new: torch.Tensor, logp_ref: torch.Tensor) -> torch.Tensor:
@@ -73,7 +79,8 @@ def kl_penalty(logp_new: torch.Tensor, logp_ref: torch.Tensor) -> torch.Tensor:
     exp(logp_ref - logp_new) - (logp_ref - logp_new) - 1. Always >= 0. Shape ``(G, T)``.
     """
     # Tu turno.
-    raise NotImplementedError
+    diff = logp_ref - logp_new
+    return torch.exp(diff) - diff - 1
 
 
 def grpo_loss(
@@ -94,4 +101,34 @@ def grpo_loss(
     ``kl`` for logging.
     """
     # Tu turno.
-    raise NotImplementedError
+    advantages = group_advantages(rewards)
+    ratio = policy_ratio(logp_new, logp_old)
+    objective = clipped_objective(ratio, advantages, epsilon)
+
+    tokens_per_seq = mask.sum(dim=-1).clamp(min=1.0)
+    per_seq_objective = (objective * mask).sum(dim=-1) / tokens_per_seq
+    mean_objective = per_seq_objective.mean()
+
+    unclipped = ratio * advantages.unsqueeze(-1)
+    clipped = torch.clamp(ratio, 1 - epsilon, 1 + epsilon) * advantages.unsqueeze(-1)
+    was_clipped = (unclipped != clipped).float()
+    clip_fraction = (was_clipped * mask).sum() / mask.sum().clamp(min=1.0)
+
+    kl_term = torch.zeros((), device=logp_new.device)
+    if beta > 0:
+        if logp_ref is None:
+            raise ValueError("beta > 0 requires logp_ref")
+        kl = kl_penalty(logp_new, logp_ref)
+        per_seq_kl = (kl * mask).sum(dim=-1) / tokens_per_seq
+        kl_term = per_seq_kl.mean()
+
+    loss = -(mean_objective - beta * kl_term)
+
+    stats = {
+        "mean_advantage": advantages.mean().item(),
+        "clip_fraction": clip_fraction.item(),
+        "kl": kl_term.item(),
+    }
+    return loss, stats
+if __name__ == "__main__":
+    pass

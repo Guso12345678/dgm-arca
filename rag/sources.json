@@ -1,0 +1,31 @@
+[
+  {
+    "id": "ley-16-2011",
+    "title": "Ley 16/2011, de 24 de junio, de contratos de crédito al consumo (texto consolidado)",
+    "url": "https://boe.gob.es/buscar/pdf/2011/BOE-A-2011-10970-consolidado.pdf",
+    "filename": "ley_16_2011_credito_consumo.pdf",
+    "language": "es",
+    "license_note": "Official Spanish legislation (BOE). Check the reuse conditions in the BOE legal notice before redistributing the files; the repo only keeps this script. Fallback URLs are tried in order; the last one is the original 2011 publication, not the consolidated text (amendments missing): note it in the report if it is the one that worked.",
+    "fallback_urls": [
+      "https://www.boe.es/buscar/pdf/2011/BOE-A-2011-10970-consolidado.pdf",
+      "https://www.boe.es/boe/dias/2011/06/25/pdfs/BOE-A-2011-10970.pdf"
+    ]
+  },
+  {
+    "id": "directiva-2023-2225",
+    "title": "Directiva (UE) 2023/2225 relativa a los contratos de crédito al consumo (DOUE, versión en español)",
+    "url": "https://www.boe.es/doue/2023/2225/L00001-00067.pdf",
+    "filename": "directiva_ue_2023_2225_credito_consumo.pdf",
+    "language": "es",
+    "license_note": "EU legislation republished in the BOE 'DOUE' section. Reuse of EU documents is governed by Commission Decision 2011/833/EU; verify before redistributing."
+  },
+  {
+    "id": "eba-gl-2020-06",
+    "title": "EBA/GL/2020/06, Guidelines on loan origination and monitoring (Spanish or English version)",
+    "url": null,
+    "manual": true,
+    "filename": "eba_gl_2020_06_loan_origination.pdf",
+    "language": "en",
+    "license_note": "Download the PDF from https://www.eba.europa.eu/regulation-and-policy/credit-risk/guidelines-on-loan-origination-and-monitoring and save it under this file name. Pick the Spanish version if the page offers it: questions and documents should share a language for BM25 to work."
+  }
+]

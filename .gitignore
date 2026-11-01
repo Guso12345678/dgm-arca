@@ -40,3 +40,4 @@ reports/*.csv
 # Sistema
 .DS_Store
 Thumbs.db
+!rag/corpus/README.md

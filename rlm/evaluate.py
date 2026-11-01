@@ -17,19 +17,36 @@ import json
 from pathlib import Path
 
 from rlm.data import load_domain_dataset, load_gsm8k
-from rlm.verifier import NumericVerifier, Verifier
+from rlm.inference import ReasoningModel
+from rlm.rewards import has_valid_format
+from rlm.verifier import CreditoVerifier, NumericVerifier, Verifier
 
 
 def evaluate_model(
     base_model: str, adapter: str | None, dataset, verifier: Verifier, max_new_tokens: int
 ) -> list[dict]:
-    """Tu turno: greedy (or low-temperature) generation for every example, one verdict each.
+    model = ReasoningModel(base_model=base_model, adapter_path=adapter, verifier_name=verifier.name)
+    model.load()
 
-    Return one dict per example with ``question``, ``expected``, ``raw``, ``predicted``,
-    ``is_correct``, ``has_valid_format`` and ``n_tokens``. Reuse ``rlm.inference.ReasoningModel``
-    instead of writing generation code again.
-    """
-    raise NotImplementedError
+    rows: list[dict] = []
+    for example in dataset:
+        question = next(m["content"] for m in example["prompt"] if m["role"] == "user")
+        expected = example["answer"]
+
+        raw, n_tokens = model.generate(question, max_new_tokens)
+        result = verifier.verify(raw, expected)
+
+        rows.append({
+            "question": question,
+            "expected": expected,
+            "raw": raw,
+            "predicted": result.predicted,
+            "is_correct": result.is_correct,
+            "has_valid_format": has_valid_format(raw),
+            "n_tokens": n_tokens,
+        })
+        print(f"[{len(rows)}/{len(dataset)}] aciertos={sum(r['is_correct'] for r in rows)}", flush=True)
+    return rows
 
 
 def pass_at_1(rows: list[dict]) -> float:
@@ -52,7 +69,7 @@ def main() -> None:
     parser.add_argument("--max-new-tokens", type=int, default=1024)
     parser.add_argument("--out", default="reports/phase1_eval.json")
     args = parser.parse_args()
-
+    verifier = NumericVerifier() if args.data == "gsm8k" else CreditoVerifier()
     dataset = (
         load_gsm8k("test", n_examples=args.n_examples)
         if args.data == "gsm8k"
@@ -65,7 +82,7 @@ def main() -> None:
             args.model,
             None if path == "none" else path,
             dataset,
-            NumericVerifier(),
+            verifier,
             args.max_new_tokens,
         )
         results[name] = {"pass@1": pass_at_1(rows), "rows": rows}

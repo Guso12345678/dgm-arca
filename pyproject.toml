@@ -31,6 +31,7 @@ rag = [
     "rank-bm25>=0.2.2",
     "langchain-text-splitters>=0.3",
     "pypdf>=5.0",
+    "matplotlib>=3.11.2",
 ]
 agent = [
     "smolagents>=1.26",

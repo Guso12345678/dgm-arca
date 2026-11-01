@@ -23,11 +23,22 @@ Here you add what makes it *yours*:
 from __future__ import annotations
 
 import argparse
+import json
+import re
 from collections.abc import Sequence
+from pathlib import Path
 
 from rlm.data import load_domain_dataset, load_gsm8k
-from rlm.rewards import _completion_text, accuracy_reward, format_reward
+from rlm.rewards import (
+    FORMAT_PATTERN,
+    NUMBER_PATTERN,
+    _completion_text,
+    accuracy_reward,
+    format_reward,
+)
 
+STRICT_ANSWER_PATTERN = re.compile(r"^-?\d+\.\d{2}$")
+MIN_CALC_NUMBERS = 3  # distinct numbers in <think> that count as a real derivation
 
 def domain_reward(prompts: Sequence, completions: Sequence, **kwargs) -> list[float]:
     """Tu turno: a reward that captures what "good" means in your domain.
@@ -40,10 +51,30 @@ def domain_reward(prompts: Sequence, completions: Sequence, **kwargs) -> list[fl
     * a units check for physical quantities; a schema check for structured answers;
     * a code-execution reward: run the unit tests of the problem (only in a sandbox!).
 
-    Until you implement it, it returns 0.0 everywhere so the script still runs.
+    
     """
+    """Recompensa propia del dominio de crédito al consumo: premia que el
+    modelo DERIVE la respuesta en vez de alucinarla, y que la presente en el
+    formato limpio (2 decimales, sin símbolos)"""
     texts = [_completion_text(c) for c in completions]
-    return [0.0 for _ in texts]
+    rewards = []
+    for text in texts:
+        match = FORMAT_PATTERN.match(text)
+        if match is None:
+            rewards.append(0.0)
+            continue
+
+        think = match.group("think")
+        answer = match.group("answer").strip()
+
+        reward = 0.0
+        distinct_numbers = len(set(NUMBER_PATTERN.findall(think)))
+        reward += 0.5 * min(distinct_numbers / MIN_CALC_NUMBERS, 1.0)
+        if STRICT_ANSWER_PATTERN.match(answer):
+            reward += 0.5
+
+        rewards.append(reward)
+    return rewards
 
 
 def train(args: argparse.Namespace) -> None:
@@ -62,8 +93,8 @@ def train(args: argparse.Namespace) -> None:
         output_dir=args.output,
         max_steps=args.steps,
         learning_rate=args.learning_rate,
-        per_device_train_batch_size=args.num_generations,
-        gradient_accumulation_steps=args.grad_accum,
+        per_device_train_batch_size=args.micro_batch,
+        gradient_accumulation_steps=(args.num_generations // args.micro_batch) * args.grad_accum,
         num_generations=args.num_generations,
         max_completion_length=args.max_completion_length,
         temperature=args.temperature,
@@ -79,9 +110,10 @@ def train(args: argparse.Namespace) -> None:
         log_completions=True,
         num_completions_to_print=2,
         model_init_kwargs={"dtype": torch.bfloat16 if device == "cuda" else torch.float32},
-        # Tu turno: reward_weights=[1.0, 2.0, 0.5] lets you weight format / accuracy / domain.
+        reward_weights=[1.0, 2.0, 0.5] #lets you weight format / accuracy / domain.
     )
-
+    if args.num_generations % args.micro_batch:
+        raise SystemExit("--micro-batch must divide --num-generations")
     if args.init_adapter:
         # Continue training the SFT adapter: load base + adapter as a trainable PeftModel.
         from peft import PeftModel
@@ -110,7 +142,11 @@ def train(args: argparse.Namespace) -> None:
     )
     trainer.train(resume_from_checkpoint=args.resume_from_checkpoint)
     trainer.save_model(args.output)
-    print(f"final adapter saved to {args.output}")
+
+
+    history_path = Path(args.output) / "history.json"
+    history_path.write_text(json.dumps(trainer.state.log_history, indent=2, default=str))
+    print(f"final adapter saved to {args.output}; history -> {history_path}")
 
 
 def main() -> None:
@@ -123,8 +159,14 @@ def main() -> None:
     parser.add_argument("--output", default="rlm/weights/final_rlm_lora")
     parser.add_argument("--steps", type=int, default=300)
     parser.add_argument("--num-generations", type=int, default=8)
+    parser.add_argument(
+        "--micro-batch",
+        type=int,
+        default=2,
+        help="sequences per forward pass; must divide --num-generations (lower it if OOM)",
+    )
     parser.add_argument("--grad-accum", type=int, default=1)
-    parser.add_argument("--max-completion-length", type=int, default=768)
+    parser.add_argument("--max-completion-length", type=int, default=1536)
     parser.add_argument("--learning-rate", type=float, default=5e-6)
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument("--beta", type=float, default=0.0, help="KL coefficient (0 disables it)")

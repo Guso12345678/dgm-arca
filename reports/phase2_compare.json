@@ -1,0 +1,1454 @@
+{
+  "summary": {
+    "coste_total": {
+      "n": 10,
+      "without_tools": 0.4,
+      "with_tools": 0.8,
+      "used_loan_metrics": 0.8
+    },
+    "TOTAL": {
+      "n": 40,
+      "without_tools": 0.1,
+      "with_tools": 0.675,
+      "used_loan_metrics": 0.675
+    },
+    "cuota": {
+      "n": 10,
+      "without_tools": 0.0,
+      "with_tools": 1.0,
+      "used_loan_metrics": 1.0
+    },
+    "ratio_endeudamiento": {
+      "n": 10,
+      "without_tools": 0.0,
+      "with_tools": 0.5,
+      "used_loan_metrics": 0.5
+    },
+    "tae": {
+      "n": 10,
+      "without_tools": 0.0,
+      "with_tools": 0.4,
+      "used_loan_metrics": 0.4
+    }
+  },
+  "rows": [
+    {
+      "id": "coste_total_00027",
+      "tipo": "coste_total",
+      "expected": "845.07",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   $$\n   \\text{Total de cuotas} = \\text{Cuota mensual} \\times \\text{Número de meses} = 340.93 \\times 24 = 8182.32 \\text{ euros}\n   $$\n\n2. **Añadir la comisión de apertura**:\n   $$\n   \\text{Coste total} = \\text{Total de cuotas} + \\text{Comisión de apertura} = 8182.32 + 67.38 = 8249.70 \\text{ euros}\n   $$\n\n**Respuesta final:**\n$$\n\\boxed{8249.70}\n$$",
+        "correct": false,
+        "seconds": 65.23
+      },
+      "with_tools": {
+        "answer": "<answer>845.07</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 7404.63,
+              "annual_rate_pct": 9.78,
+              "months": 24,
+              "upfront_fee": 67.38,
+              "monthly_income": 3965.4,
+              "other_monthly_debts": 186.81,
+              "monthly_payment": 340.93
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 61.59
+      }
+    },
+    {
+      "id": "coste_total_00130",
+      "tipo": "coste_total",
+      "expected": "1030.49",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   $$\n   \\text{Total de cuotas} = 1784.97 \\times 12 = 21419.64 \\text{ euros}\n   $$\n\n2. **Sumar la comisión de apertura**:\n   $$\n   \\text{Total de costes} = 21419.64 + 310.53 = 21730.17 \\text{ euros}\n   $$\n\n3. **Restar el capital recibido**:\n   $$\n   \\text{Coste total del crédito} = 21730.17 - 20699.68 = 1030.49 \\text{ euros}\n   $$\n\n**Respuesta final:**\n```\n1030.49\n```",
+        "correct": true,
+        "seconds": 14.61
+      },
+      "with_tools": {
+        "answer": "To calculate the total cost of credit, we need to determine the total amount paid over the loan period and subtract the principal amount received. The total amount paid is the monthly payment multiplied by the number of months. The total cost is then the difference between the total amount paid and the principal.\n\nGiven:\n- Monthly payment: 1784.97 euros\n- Number of months: 12\n\nTotal amount paid = 1784.97 * 12 = 21419.64 euros\n\nTotal cost = Total amount paid - Principal = 21419.64 - 20699.68 = 720.00 euros\n\nThe total cost of credit is 720.00 euros.",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 5.97
+      }
+    },
+    {
+      "id": "coste_total_00073",
+      "tipo": "coste_total",
+      "expected": "2803.54",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   $$\n   \\text{Total de cuotas} = 2633.89 \\times 12 = 31606.68 \\text{ euros}\n   $$\n\n2. **Sumar la comisión de apertura**:\n   $$\n   \\text{Total de costes} = 31606.68 + 539.41 = 32146.09 \\text{ euros}\n   $$\n\n3. **Calcular el coste total del crédito**:\n   $$\n   \\text{Coste total del crédito} = \\text{Total de cuotas} - \\text{Capital recibido}\n   $$\n   $$\n   \\text{Coste total del crédito} = 32146.09 - 29342.55 = 2803.54 \\text{ euros}\n   $$\n\n**Respuesta final:**\n```\n2803.54\n```",
+        "correct": true,
+        "seconds": 18.85
+      },
+      "with_tools": {
+        "answer": "The total cost of credit is 2803.54 euros.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 29342.55,
+              "annual_rate_pct": 13.95,
+              "months": 12,
+              "upfront_fee": 539.41,
+              "other_monthly_debts": 450.64,
+              "monthly_income": 1612.28
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 5.24
+      }
+    },
+    {
+      "id": "coste_total_00060",
+      "tipo": "coste_total",
+      "expected": "741.94",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   - La cuota mensual es de **305.00 euros**.\n   - El préstamo dura **24 meses**.\n   - Total de cuotas = $ 305.00 \\times 24 = 7320.00 $ euros.\n\n2. **Añadir la comisión de apertura**:\n   - La comisión de apertura es de **111.50 euros**.\n   - Total de costes = $ 7320.00 + 111.50 = 7431.50 $ euros.\n\n3. **Calcular el coste total del crédito**:\n   - Este es la diferencia entre lo que se paga en total y el capital recibido.\n   - Capital recibido = **6689.56 euros**.\n   - Coste total = $ 7431.50 - 6689.56 = 741.94 $ euros.\n\n**Respuesta final:**\n<answer>741.94</answer>",
+        "correct": true,
+        "seconds": 11.81
+      },
+      "with_tools": {
+        "answer": "The total cost of the credit is 741.94 euros.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 6689.56,
+              "annual_rate_pct": 8.8,
+              "months": 24,
+              "upfront_fee": 111.5,
+              "other_monthly_debts": 327.3,
+              "monthly_payment": 305.0
+            },
+            "ok": true
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 6689.56,
+              "annual_rate_pct": 8.8,
+              "months": 24,
+              "upfront_fee": 111.5,
+              "other_monthly_debts": 327.3,
+              "monthly_payment": 305.0
+            },
+            "ok": false
+          }
+        ],
+        "turns": 2,
+        "seconds": 11.34
+      }
+    },
+    {
+      "id": "coste_total_00134",
+      "tipo": "coste_total",
+      "expected": "2524.77",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   $$\n   \\text{Total cuotas} = \\text{Cuota mensual} \\times \\text{Número de meses} = 348.13 \\times 48\n   $$\n\n2. **Añadir la comisión de apertura**:\n   $$\n   \\text{Total coste} = \\text{Total cuotas} + \\text{Comisión de apertura} = (348.13 \\times 48) + 0.70\n   $$\n\n3. **Calcular el total de las cuotas**:\n   $$\n   348.13 \\times 48 = 16,709.44\n   $$\n\n4. **Sumar la comisión de apertura**:\n   $$\n   16,709.44 + 0.70 = 16,709.44 + 0.70 = 16,710.14\n   $$\n\n**Respuesta final:**\n$$\n\\boxed{16710.14}\n$$",
+        "correct": false,
+        "seconds": 8.73
+      },
+      "with_tools": {
+        "answer": "The total cost of the credit is 2524.77 euros.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": true
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14186.17,
+              "annual_rate_pct": 8.27,
+              "months": 48,
+              "upfront_fee": 0.7,
+              "monthly_income": 3299.82,
+              "other_monthly_debts": 366.36,
+              "monthly_payment": 348.13
+            },
+            "ok": false
+          }
+        ],
+        "turns": 2,
+        "seconds": 289.25
+      }
+    },
+    {
+      "id": "coste_total_00042",
+      "tipo": "coste_total",
+      "expected": "551.85",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   $$\n   1141.01 \\times 12 = 13692.12 \\text{ euros}\n   $$\n\n2. **Añadir la comisión de apertura**:\n   $$\n   13692.12 + 17.71 = 13692.12 + 17.71 = 13709.83 \\text{ euros}\n   $$\n\n3. **Restar el capital recibido**:\n   $$\n   13709.83 - 13157.98 = 551.85 \\text{ euros}\n   $$\n\n**Respuesta final:**\n$$\n\\boxed{551.85}\n$$",
+        "correct": true,
+        "seconds": 2.93
+      },
+      "with_tools": {
+        "answer": "The total cost of the credit is 551.85 euros.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 13157.98,
+              "annual_rate_pct": 7.41,
+              "months": 12,
+              "upfront_fee": 17.71,
+              "other_monthly_debts": 223.22,
+              "monthly_income": 2741.23
+            },
+            "ok": true
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 13157.98,
+              "annual_rate_pct": 7.41,
+              "months": 12,
+              "upfront_fee": 17.71,
+              "other_monthly_debts": 223.22,
+              "monthly_income": 2741.23
+            },
+            "ok": false
+          }
+        ],
+        "turns": 2,
+        "seconds": 3.42
+      }
+    },
+    {
+      "id": "coste_total_00110",
+      "tipo": "coste_total",
+      "expected": "4077.82",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   $$\n   \\text{Total cuotas} = 486.73 \\times 48 = 23,362.44 \\text{ euros}\n   $$\n\n2. **Añadir la comisión de apertura**:\n   $$\n   \\text{Total coste} = 23,362.44 + 288.67 = 23,651.11 \\text{ euros}\n   $$\n\n3. **Restar el capital recibido**:\n   $$\n   \\text{Coste total del crédito} = 23,651.11 - 19,573.89 = 4,077.22 \\text{ euros}\n   $$\n\n**Respuesta final:**\n```\n4077.22\n```",
+        "correct": false,
+        "seconds": 3.14
+      },
+      "with_tools": {
+        "answer": "The total cost of the credit is calculated as the sum of all payments made minus the capital received. From the provided result, the total cost is 4077.82 euros. \n\n<answer>4077.82</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 19573.89,
+              "annual_rate_pct": 8.96,
+              "months": 48,
+              "upfront_fee": 288.67,
+              "other_monthly_debts": 224.79,
+              "monthly_income": 3637.6
+            },
+            "ok": true
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 19573.89,
+              "annual_rate_pct": 8.96,
+              "months": 48,
+              "upfront_fee": 288.67,
+              "other_monthly_debts": 224.79,
+              "monthly_income": 3637.6
+            },
+            "ok": false
+          }
+        ],
+        "turns": 2,
+        "seconds": 4.0
+      }
+    },
+    {
+      "id": "coste_total_00132",
+      "tipo": "coste_total",
+      "expected": "1851.85",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   - La cuota mensual es de **207.01 euros**.\n   - El préstamo dura **48 meses**.\n   - Total de cuotas = $ 207.01 \\times 48 = 9936.48 $ euros.\n\n2. **Añadir la comisión de apertura**:\n   - La comisión de apertura es de **94.46 euros**.\n\n3. **Calcular el coste total del crédito**:\n   - Coste total = Total de cuotas + Comisión de apertura\n   - Coste total = $ 9936.48 + 94.46 = 9936.48 + 94.46 = 10030.94 $ euros.\n\n**Respuesta final:**\n<answer>10030.94</answer>",
+        "correct": false,
+        "seconds": 3.31
+      },
+      "with_tools": {
+        "answer": "<answer>1851.85</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": true
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8179.09,
+              "annual_rate_pct": 9.89,
+              "months": 48,
+              "upfront_fee": 94.46,
+              "monthly_income": 1733.02,
+              "other_monthly_debts": 207.11,
+              "monthly_payment": 207.01
+            },
+            "ok": false
+          }
+        ],
+        "turns": 2,
+        "seconds": 15.49
+      }
+    },
+    {
+      "id": "coste_total_00004",
+      "tipo": "coste_total",
+      "expected": "9238.52",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   $$\n   \\text{Total cuotas} = \\text{Cuota mensual} \\times \\text{Número de meses} = 787.20 \\times 48\n   $$\n\n2. **Sumar la comisión de apertura**:\n   $$\n   \\text{Total coste} = \\text{Total cuotas} + \\text{Comisión de apertura} = (787.20 \\times 48) + 196.80\n   $$\n\n3. **Calcular el total de las cuotas**:\n   $$\n   787.20 \\times 48 = 37,862.40\n   $$\n\n4. **Sumar la comisión de apertura**:\n   $$\n   37,862.40 + 196.80 = 38,059.20\n   $$\n\n**Respuesta final:**\n$$\n\\boxed{38059.20}\n$$",
+        "correct": false,
+        "seconds": 4.19
+      },
+      "with_tools": {
+        "answer": "The total cost of credit is 9238.52 euros.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 28743.88,
+              "annual_rate_pct": 14.12,
+              "months": 48,
+              "upfront_fee": 196.8,
+              "monthly_income": 1998.29,
+              "other_monthly_debts": 385.99,
+              "monthly_payment": 787.2
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 2.77
+      }
+    },
+    {
+      "id": "coste_total_00115",
+      "tipo": "coste_total",
+      "expected": "7628.75",
+      "without_tools": {
+        "answer": "Para calcular el **coste total del crédito**, debemos:\n\n1. **Calcular el total de las cuotas mensuales**:\n   $$\n   \\text{Total cuotas} = \\text{Cuota mensual} \\times \\text{Número de meses} = 525.35 \\times 60 = 31521.00 \\text{ euros}\n   $$\n\n2. **Añadir la comisión de apertura**:\n   $$\n   \\text{Total coste} = \\text{Total cuotas} + \\text{Comisión de apertura} = 31521.00 + 325.54 = 31846.54 \\text{ euros}\n   $$\n\n**Respuesta final:**\n$$\n\\boxed{31846.54}\n$$",
+        "correct": false,
+        "seconds": 2.71
+      },
+      "with_tools": {
+        "answer": "To calculate the total cost of credit, we need to determine the total amount paid over the loan period and subtract the principal amount received. The total amount paid is the monthly payment multiplied by the number of months. The total cost is then the difference between the total amount paid and the principal.\n\nGiven:\n- Monthly payment: 525.35 euros\n- Number of months: 60\n- Principal: 24217.79 euros\n- Upfront fee: 325.54 euros\n\nFirst, calculate the total amount paid:\n$$ \\text{Total amount paid} = 525.35 \\times 60 = 31521.00 \\text{ euros} $$\n\nNext, calculate the total cost of credit:\n$$ \\text{Total cost} = 31521.00 - 24217.79 = 7303.21 \\text{ euros} $$\n\nThe total cost of credit is 7303.21 euros.",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 3.38
+      }
+    },
+    {
+      "id": "cuota_00089",
+      "tipo": "cuota",
+      "expected": "691.42",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 28,584.92 €  \n- **Tipo nominal anual (i):** 7.52% → 0.0752 en decimal  \n- **Tasa mensual (i_m):**  \n  $$\n  i_m = \\frac{0.0752}{12} = 0.00626667\n  $$\n- **Número de meses (n):** 48  \n- **Comisión de apertura:** 46.83 €  \n- **Otros deudas mensuales:** 269.71 € (no afecta al cálculo de la cuota mensual)\n\n---\n\n### **Fórmula para la cuota mensual (M) en amortización francés:**\n\n$$\nM = P \\cdot \\frac{i_m (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\n---\n\n### **Cálculo paso a paso:**\n\n1. **Calcular $ (1 + i_m)^n $:**\n\n$$\n(1 + 0.00626667)^{48} \\approx 1.3563\n$$\n\n2. **Calcular el numerador:**\n\n$$\ni_m (1 + i_m)^n = 0.00626667 \\cdot 1.3563 \\approx 0.008473\n$$\n\n3. **Calcular el denominador:**\n\n$$\n(1 + i_m)^n - 1 = 1.3563 - 1 = 0.3563\n$$\n\n4. **Calcular la cuota mensual:**\n\n$$\nM = 28584.92 \\cdot \\frac{0.008473}{0.3563} \\approx 28584.92 \\cdot 0.02376 \\approx 679.33\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{679.33}\n$$",
+        "correct": false,
+        "seconds": 82.45
+      },
+      "with_tools": {
+        "answer": "<answer>691.42</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 28584.92,
+              "annual_rate_pct": 7.52,
+              "months": 48,
+              "upfront_fee": 46.83,
+              "other_monthly_debts": 269.71
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 12.03
+      }
+    },
+    {
+      "id": "cuota_00083",
+      "tipo": "cuota",
+      "expected": "464.73",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 14832.41 €  \n- **Tipo nominal anual (i):** 7.99% → 0.0799 en decimal  \n- **Tasa mensual (i_m):** $ \\frac{0.0799}{12} = 0.00665833 $  \n- **Número de meses (n):** 36  \n- **Comisión de apertura (C):** 115.69 €  \n- **Otros deudas mensuales:** 417.86 € (no afecta al préstamo, pero se incluye en el total de ingresos)\n\n---\n\n### **Paso 1: Calcular el valor efectivo del préstamo**\n\nEl valor efectivo del préstamo es el valor del préstamo más la comisión de apertura:\n\n$$\nP_{\\text{efectivo}} = 14832.41 + 115.69 = 14948.10 \\, \\text{€}\n$$\n\n---\n\n### **Paso 2: Usar la fórmula de la cuota mensual en amortización francés**\n\nLa fórmula para la cuota mensual $ M $ en amortización francés es:\n\n$$\nM = \\frac{P_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\nDonde:\n- $ P_{\\text{efectivo}} = 14948.10 $\n- $ i_m = 0.00665833 $\n- $ n = 36 $\n\n---\n\n### **Paso 3: Calcular el valor del numerador y denominador**\n\n**Numerador:**\n\n$$\nP_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n = 14948.10 \\cdot 0.00665833 \\cdot (1.00665833)^{36}\n$$\n\nPrimero calculamos $ (1.00665833)^{36} $:\n\n$$\n(1.00665833)^{36} \\approx 1.2697\n$$\n\nLuego:\n\n$$\n14948.10 \\cdot 0.00665833 \\cdot 1.2697 \\approx 14948.10 \\cdot 0.008483 \\approx 126.33\n$$\n\n**Denominador:**\n\n$$\n(1 + i_m)^n - 1 = 1.2697 - 1 = 0.2697\n$$\n\n---\n\n### **Paso 4: Calcular la cuota mensual**\n\n$$\nM = \\frac{126.33}{0.2697} \\approx 468.00\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{468.00}\n$$",
+        "correct": false,
+        "seconds": 84.4
+      },
+      "with_tools": {
+        "answer": "<answer>464.73</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14832.41,
+              "annual_rate_pct": 7.99,
+              "months": 36,
+              "upfront_fee": 115.69,
+              "other_monthly_debts": 417.86
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 2.34
+      }
+    },
+    {
+      "id": "cuota_00125",
+      "tipo": "cuota",
+      "expected": "610.81",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 25954.99 €  \n- **Tipo nominal anual (i):** 14.51% → 0.1451 en decimal  \n- **Tasa mensual (i_m):** $ \\frac{0.1451}{12} = 0.0120916667 $  \n- **Número de meses (n):** 60  \n- **Comisión de apertura (C):** 518.88 €  \n- **Otros deudas mensuales:** 134.76 € (no afecta al préstamo, pero se incluye en el total de ingresos)\n\n---\n\n### **Paso 1: Calcular el valor efectivo del préstamo**\n\nEl valor efectivo del préstamo es el valor del préstamo más la comisión de apertura:\n\n$$\nP_{\\text{efectivo}} = 25954.99 + 518.88 = 26473.87 \\, \\text{€}\n$$\n\n---\n\n### **Paso 2: Usar la fórmula de la cuota mensual en amortización francés**\n\nLa fórmula para la cuota mensual $ M $ en amortización francés es:\n\n$$\nM = \\frac{P_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\nDonde:\n- $ P_{\\text{efectivo}} = 26473.87 $\n- $ i_m = 0.0120916667 $\n- $ n = 60 $\n\n---\n\n### **Paso 3: Calcular el valor del numerador y denominador**\n\n**Numerador:**\n\n$$\nP_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n = 26473.87 \\cdot 0.0120916667 \\cdot (1.0120916667)^{60}\n$$\n\nPrimero calculamos $ (1.0120916667)^{60} $:\n\n$$\n(1.0120916667)^{60} \\approx 2.1165\n$$\n\nLuego:\n\n$$\n26473.87 \\cdot 0.0120916667 \\cdot 2.1165 \\approx 647.33\n$$\n\n**Denominador:**\n\n$$\n(1 + i_m)^n - 1 = 2.1165 - 1 = 1.1165\n$$\n\n---\n\n### **Paso 4: Calcular la cuota mensual**\n\n$$\nM = \\frac{647.33}{1.1165} \\approx 579.33\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{579.33}\n$$",
+        "correct": false,
+        "seconds": 11.05
+      },
+      "with_tools": {
+        "answer": "<answer>610.81</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 25954.99,
+              "annual_rate_pct": 14.51,
+              "months": 60,
+              "upfront_fee": 518.88,
+              "other_monthly_debts": 134.76
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 2.43
+      }
+    },
+    {
+      "id": "cuota_00043",
+      "tipo": "cuota",
+      "expected": "321.35",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 10111.33 €  \n- **Tipo nominal anual (i):** 8.96% → 0.0896 en decimal  \n- **Tasa mensual (i_m):** $ \\frac{0.0896}{12} = 0.0074667 $  \n- **Número de meses (n):** 36  \n- **Comisión de apertura (C):** 135.83 €  \n- **Otros deudas mensuales:** 158.09 € (no afecta al préstamo, pero se incluye en el total de ingresos)\n\n---\n\n### **Paso 1: Calcular el valor efectivo del préstamo**\n\nEl valor efectivo del préstamo es el valor del préstamo más la comisión de apertura:\n\n$$\nP_{\\text{efectivo}} = 10111.33 + 135.83 = 10247.16 \\, \\text{€}\n$$\n\n---\n\n### **Paso 2: Usar la fórmula de la cuota mensual en amortización francés**\n\nLa fórmula para la cuota mensual en amortización francés es:\n\n$$\nM = \\frac{P_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\nDonde:\n- $ P_{\\text{efectivo}} = 10247.16 $\n- $ i_m = 0.0074667 $\n- $ n = 36 $\n\n---\n\n### **Paso 3: Calcular el numerador y el denominador**\n\n**Numerador:**\n\n$$\nP_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n = 10247.16 \\cdot 0.0074667 \\cdot (1.0074667)^{36}\n$$\n\nPrimero calculamos $ (1.0074667)^{36} $:\n\n$$\n(1.0074667)^{36} \\approx 1.2823\n$$\n\nLuego:\n\n$$\n10247.16 \\cdot 0.0074667 \\cdot 1.2823 \\approx 10247.16 \\cdot 0.009553 \\approx 97.63\n$$\n\n**Denominador:**\n\n$$\n(1 + i_m)^n - 1 = 1.2823 - 1 = 0.2823\n$$\n\n---\n\n### **Paso 4: Calcular la cuota mensual**\n\n$$\nM = \\frac{97.63}{0.2823} \\approx 345.67\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{345.67}\n$$",
+        "correct": false,
+        "seconds": 10.49
+      },
+      "with_tools": {
+        "answer": "<answer>321.35</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 10111.33,
+              "annual_rate_pct": 8.96,
+              "months": 36,
+              "upfront_fee": 135.83,
+              "other_monthly_debts": 158.09
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 1.47
+      }
+    },
+    {
+      "id": "cuota_00087",
+      "tipo": "cuota",
+      "expected": "1791.75",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Monto del préstamo:** 20226.99 €  \n- **Tipo nominal anual:** 11.43% → **Tasa mensual** = $ \\frac{11.43\\%}{12} = 0.9525\\% = 0.009525 $  \n- **Número de meses:** 12  \n- **Comisión de apertura:** 54.90 €  \n- **Otros deudas mensuales:** 25.14 € (estos se consideran como **deudas extras** y no afectan la cuota mensual principal)\n\n---\n\n### **Paso 1: Calcular el monto efectivo del préstamo**\n\nEl monto efectivo del préstamo es el monto del préstamo más la comisión de apertura:\n\n$$\n\\text{Monto efectivo} = 20226.99 + 54.90 = 20281.89 \\, \\text{€}\n$$\n\n---\n\n### **Paso 2: Usar la fórmula de la cuota mensual en amortización francés**\n\nLa fórmula para la cuota mensual $ R $ en amortización francés es:\n\n$$\nR = \\frac{P \\cdot i (1 + i)^n}{(1 + i)^n - 1}\n$$\n\nDonde:\n- $ P = 20281.89 $ € (monto efectivo)\n- $ i = 0.009525 $ (tasa mensual)\n- $ n = 12 $ (número de meses)\n\n---\n\n### **Paso 3: Sustituir los valores en la fórmula**\n\n$$\nR = \\frac{20281.89 \\cdot 0.009525 \\cdot (1 + 0.009525)^{12}}{(1 + 0.009525)^{12} - 1}\n$$\n\n---\n\n### **Paso 4: Calcular los valores**\n\n- $ (1 + 0.009525)^{12} \\approx 1.1195 $ (aproximado)\n- Numerador: $ 20281.89 \\cdot 0.009525 \\cdot 1.1195 \\approx 222.33 $\n- Denominador: $ 1.1195 - 1 = 0.1195 $\n\n$$\nR \\approx \\frac{222.33}{0.1195} \\approx 1856.03\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{1856.03}\n$$",
+        "correct": false,
+        "seconds": 9.92
+      },
+      "with_tools": {
+        "answer": "<answer>1791.75</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 20226.99,
+              "annual_rate_pct": 11.43,
+              "months": 12,
+              "upfront_fee": 54.9,
+              "other_monthly_debts": 25.14
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 1.97
+      }
+    },
+    {
+      "id": "cuota_00014",
+      "tipo": "cuota",
+      "expected": "410.50",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 8681.52 euros  \n- **Tipo nominal anual (i):** 12.45% → 0.1245 en decimal  \n- **Tasa mensual (i_m):**  \n  $$\n  i_m = \\frac{0.1245}{12} = 0.010375\n  $$\n- **Número de meses (n):** 24  \n- **Comisión de apertura (C):** 93.58 euros  \n- **Deudas mensuales:** 214.22 euros (no se incluye en el préstamo, se considera como una deuda adicional)\n\n---\n\n### **Paso 1: Calcular el valor efectivo del préstamo**\n\nEl préstamo se pide **8681.52 euros**, y hay una **comisión de apertura de 93.58 euros**.  \nPor lo tanto, el **valor efectivo a amortizar** es:\n\n$$\nP_{\\text{efectivo}} = 8681.52 + 93.58 = 8775.10 \\text{ euros}\n$$\n\n---\n\n### **Paso 2: Usar la fórmula de la cuota mensual en amortización francés**\n\nLa fórmula para la cuota mensual $ M $ en amortización francés es:\n\n$$\nM = \\frac{P \\cdot i_m \\cdot (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\nDonde:\n- $ P = 8775.10 $  \n- $ i_m = 0.010375 $  \n- $ n = 24 $\n\n---\n\n### **Paso 3: Calcular el valor de $ (1 + i_m)^n $**\n\n$$\n(1 + i_m)^n = (1 + 0.010375)^{24} \\approx 1.2816\n$$\n\n---\n\n### **Paso 4: Sustituir en la fórmula**\n\n$$\nM = \\frac{8775.10 \\cdot 0.010375 \\cdot 1.2816}{1.2816 - 1}\n$$\n\n$$\nM = \\frac{8775.10 \\cdot 0.013216}{0.2816}\n$$\n\n$$\nM = \\frac{1159.33}{0.2816} \\approx 4117.03\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{4117.03}\n$$",
+        "correct": false,
+        "seconds": 9.39
+      },
+      "with_tools": {
+        "answer": "<answer>410.5</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8681.52,
+              "annual_rate_pct": 12.45,
+              "months": 24,
+              "upfront_fee": 93.58,
+              "other_monthly_debts": 214.22
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 1.87
+      }
+    },
+    {
+      "id": "cuota_00106",
+      "tipo": "cuota",
+      "expected": "544.27",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 17050.72 €  \n- **Tipo nominal anual (i):** 9.26% → 0.0926 en decimal  \n- **Tasa mensual (i_m):**  \n  $$\n  i_m = \\frac{0.0926}{12} = 0.007716667\n  $$\n- **Número de meses (n):** 36  \n- **Comisión de apertura:** 254.37 €  \n- **Ingresos netos mensuales:** 1925.45 €  \n- **Deudas mensuales:** 351.43 €  \n- **Total de deudas:** 351.43 € × 36 = 12651.48 €  \n- **Total de ingresos netos:** 1925.45 € × 36 = 69316.20 €\n\n---\n\n### **Paso 1: Calcular el valor efectivo del préstamo**\n\nEl valor efectivo del préstamo es el valor del préstamo más la comisión de apertura:\n\n$$\nP_{\\text{efectivo}} = 17050.72 + 254.37 = 17305.09 \\, \\text{€}\n$$\n\n---\n\n### **Paso 2: Calcular la cuota mensual con el sistema de amortización francés**\n\nLa fórmula para la cuota mensual en el sistema de amortización francés es:\n\n$$\nM = \\frac{P \\cdot i_m \\cdot (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\nDonde:\n- $ P = 17305.09 $\n- $ i_m = 0.007716667 $\n- $ n = 36 $\n\n---\n\n### **Paso 3: Sustituir los valores en la fórmula**\n\n$$\nM = \\frac{17305.09 \\cdot 0.007716667 \\cdot (1 + 0.007716667)^{36}}{(1 + 0.007716667)^{36} - 1}\n$$\n\n---\n\n### **Paso 4: Calcular los valores necesarios**\n\n- $ (1 + 0.007716667)^{36} \\approx 1.3063 $\n- Numerador:  \n  $ 17305.09 \\cdot 0.007716667 \\cdot 1.3063 \\approx 17305.09 \\cdot 0.010103 \\approx 174.43 $\n- Denominador:  \n  $ 1.3063 - 1 = 0.3063 $\n\n---\n\n### **Paso 5: Calcular la cuota mensual**\n\n$$\nM \\approx \\frac{174.43}{0.3063} \\approx 568.73\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{568.73}\n$$",
+        "correct": false,
+        "seconds": 25.85
+      },
+      "with_tools": {
+        "answer": "<answer>544.27</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 17050.72,
+              "annual_rate_pct": 9.26,
+              "months": 36,
+              "upfront_fee": 254.37,
+              "other_monthly_debts": 351.43
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 1.91
+      }
+    },
+    {
+      "id": "cuota_00133",
+      "tipo": "cuota",
+      "expected": "41.79",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 1837.21 €  \n- **Tipo nominal anual (i):** 12.99% → 0.1299 en decimal  \n- **Tasa mensual (i_m):** $ \\frac{0.1299}{12} = 0.010825 $  \n- **Número de meses (n):** 60  \n- **Comisión de apertura:** 26.08 €  \n- **Otros deudas mensuales:** 6.84 € (se considera como una deuda adicional, pero no afecta directamente la cuota mensual)\n\n---\n\n### **Paso 1: Calcular el valor efectivo del préstamo**\n\nEl valor efectivo del préstamo es el valor del préstamo más la comisión de apertura:\n\n$$\nP_{\\text{efectivo}} = 1837.21 + 26.08 = 1863.29 \\, \\text{€}\n$$\n\n---\n\n### **Paso 2: Usar la fórmula de la cuota mensual en amortización francés**\n\nLa fórmula para la cuota mensual en amortización francés es:\n\n$$\nM = \\frac{P_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\nDonde:\n- $ P_{\\text{efectivo}} = 1863.29 $\n- $ i_m = 0.010825 $\n- $ n = 60 $\n\n---\n\n### **Paso 3: Calcular el valor del numerador y denominador**\n\n**Numerador:**\n\n$$\nP_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n = 1863.29 \\cdot 0.010825 \\cdot (1.010825)^{60}\n$$\n\n**Denominador:**\n\n$$\n(1 + i_m)^n - 1 = (1.010825)^{60} - 1\n$$\n\n---\n\n### **Paso 4: Calcular los valores numéricos**\n\n- $ (1.010825)^{60} \\approx 1.8461 $\n- $ 1863.29 \\cdot 0.010825 = 19.9999 \\approx 20.00 $\n- $ 20.00 \\cdot 1.8461 = 36.922 $\n- $ 1.8461 - 1 = 0.8461 $\n\n---\n\n### **Paso 5: Calcular la cuota mensual**\n\n$$\nM = \\frac{36.922}{0.8461} \\approx 43.61\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{43.61}\n$$",
+        "correct": false,
+        "seconds": 11.13
+      },
+      "with_tools": {
+        "answer": "<answer>41.79</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 1837.21,
+              "annual_rate_pct": 12.99,
+              "months": 60,
+              "upfront_fee": 26.08,
+              "other_monthly_debts": 6.84
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 2.58
+      }
+    },
+    {
+      "id": "cuota_00005",
+      "tipo": "cuota",
+      "expected": "373.78",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 11410.40 €  \n- **Tipo nominal anual (i):** 11.04% → 0.1104 en decimal  \n- **Tasa mensual (i_m):**  \n  $$\n  i_m = \\frac{0.1104}{12} = 0.0092\n  $$\n- **Número de meses (n):** 36  \n- **Comisión de apertura (C):** 184.19 €  \n- **Otros deudas mensuales:** 268.11 € (no afecta al cálculo de la cuota mensual)\n\n---\n\n### **Paso 1: Calcular el valor efectivo del préstamo**\n\nEl valor efectivo del préstamo es el valor del préstamo más la comisión de apertura:\n\n$$\nP_{\\text{efectivo}} = 11410.40 + 184.19 = 11594.59 \\, \\text{€}\n$$\n\n---\n\n### **Paso 2: Usar la fórmula de la cuota mensual en amortización francés**\n\nLa fórmula para la cuota mensual en amortización francés es:\n\n$$\nM = \\frac{P_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\nDonde:\n- $ P_{\\text{efectivo}} = 11594.59 $\n- $ i_m = 0.0092 $\n- $ n = 36 $\n\n---\n\n### **Paso 3: Calcular el numerador y el denominador**\n\n**Numerador:**\n\n$$\nP_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n = 11594.59 \\cdot 0.0092 \\cdot (1.0092)^{36}\n$$\n\nPrimero calculamos $ (1.0092)^{36} $:\n\n$$\n(1.0092)^{36} \\approx 1.3636\n$$\n\nLuego:\n\n$$\n11594.59 \\cdot 0.0092 \\cdot 1.3636 \\approx 11594.59 \\cdot 0.012636 \\approx 1458.33\n$$\n\n**Denominador:**\n\n$$\n(1 + i_m)^n - 1 = 1.3636 - 1 = 0.3636\n$$\n\n---\n\n### **Paso 4: Calcular la cuota mensual**\n\n$$\nM = \\frac{1458.33}{0.3636} \\approx 4011.67\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{4011.67}\n$$",
+        "correct": false,
+        "seconds": 10.6
+      },
+      "with_tools": {
+        "answer": "<answer>373.78</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 11410.4,
+              "annual_rate_pct": 11.04,
+              "months": 36,
+              "upfront_fee": 184.19,
+              "other_monthly_debts": 268.11
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 1.99
+      }
+    },
+    {
+      "id": "cuota_00145",
+      "tipo": "cuota",
+      "expected": "883.66",
+      "without_tools": {
+        "answer": "Para calcular la **cuota mensual** mediante el **sistema de amortización francés**, seguimos los siguientes pasos:\n\n---\n\n### **Datos del préstamo:**\n\n- **Valor del préstamo (P):** 19988.66 €  \n- **Tipo nominal anual (i):** 5.75% → 0.0575 en decimal  \n- **Tasa mensual (i_m):**  \n  $$\n  i_m = \\frac{0.0575}{12} = 0.004791667\n  $$\n- **Número de meses (n):** 24  \n- **Comisión de apertura (C):** 312.43 €  \n- **Deudas mensuales:** 311.63 € (no se incluye en el préstamo, se considera como una deuda adicional)\n\n---\n\n### **Paso 1: Calcular el valor efectivo del préstamo**\n\nEl préstamo se pide **19988.66 €**, y hay una **comisión de apertura de 312.43 €**.  \nEntonces, el **valor efectivo a amortizar** es:\n\n$$\nP_{\\text{efectivo}} = 19988.66 + 312.43 = 20301.09 \\, \\text{€}\n$$\n\n---\n\n### **Paso 2: Usar la fórmula de la cuota mensual en amortización francés**\n\nLa fórmula para la cuota mensual $ M $ en amortización francés es:\n\n$$\nM = \\frac{P_{\\text{efectivo}} \\cdot i_m \\cdot (1 + i_m)^n}{(1 + i_m)^n - 1}\n$$\n\nSustituimos los valores:\n\n$$\nM = \\frac{20301.09 \\cdot 0.004791667 \\cdot (1 + 0.004791667)^{24}}{(1 + 0.004791667)^{24} - 1}\n$$\n\n---\n\n### **Paso 3: Calcular los valores necesarios**\n\n- $ (1 + 0.004791667)^{24} \\approx 1.123555 $\n- Numerador:  \n  $$\n  20301.09 \\cdot 0.004791667 \\cdot 1.123555 \\approx 20301.09 \\cdot 0.005373 \\approx 108.93\n  $$\n- Denominador:  \n  $$\n  1.123555 - 1 = 0.123555\n  $$\n\n---\n\n### **Paso 4: Calcular la cuota mensual**\n\n$$\nM = \\frac{108.93}{0.123555} \\approx 883.13\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{883.13}\n$$",
+        "correct": false,
+        "seconds": 10.52
+      },
+      "with_tools": {
+        "answer": "<answer>883.66</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 19988.66,
+              "annual_rate_pct": 5.75,
+              "months": 24,
+              "upfront_fee": 312.43,
+              "other_monthly_debts": 311.63
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 1.46
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00083",
+      "tipo": "ratio_endeudamiento",
+      "expected": "23.72",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n1. **Calcular el total de la deuda mensual**:\n   - La cuota mensual del préstamo: **232.74 euros**\n   - Las otras deudas mensuales: **99.85 euros**\n   - Total de deudas mensuales:  \n     $$\n     232.74 + 99.85 = 332.59 \\text{ euros}\n     $$\n\n2. **Calcular el total de ingresos mensuales**:\n   - Ingresos netos: **1402.38 euros/mes**\n   - Total de ingresos mensuales:  \n     $$\n     1402.38 \\text{ euros}\n     $$\n\n3. **Calcular el ratio de endeudamiento**:\n   - Ratio = $\\frac{\\text{Total de deudas mensuales}}{\\text{Ingresos mensuales}} \\times 100$\n   - Sustituyendo los valores:\n     $$\n     \\text{Ratio} = \\frac{332.59}{1402.38} \\times 100 \\approx 23.70\\%\n     $$\n\n**Respuesta final:**  \n$$\n\\boxed{23.70}\n$$",
+        "correct": false,
+        "seconds": 4.31
+      },
+      "with_tools": {
+        "answer": "To calculate the debt ratio, we need to determine the total monthly debt payments, including the monthly loan payment and other monthly debts. The steps are as follows:\n\n1. **Total Monthly Debt Payments**:\n   - Monthly loan payment: 232.74 euros\n   - Other monthly debts: 99.85 euros\n   - Total monthly debt payments: 232.74 + 99.85 = 332.59 euros\n\n2. **Monthly Income**:\n   - Monthly income: 1402.38 euros\n\n3. **Debt Ratio Calculation**:\n   - Debt ratio = (Total monthly debt payments / Monthly income) * 100\n   - Debt ratio = (332.59 / 1402.38) * 100\n\nThe result is:\n\n<answer>30.87</answer>",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 2.99
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00052",
+      "tipo": "ratio_endeudamiento",
+      "expected": "29.02",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calculamos el total de deudas mensuales existentes:**\n\n- **Deudas mensuales:** 59.99 euros  \n- **Número de meses:** 12  \n- **Total de deudas mensuales:**  \n  $$\n  59.99 \\times 12 = 719.88 \\text{ euros}\n  $$\n\n---\n\n### **2. Calculamos el total de pagos mensuales:**\n\n- **Cuota mensual:** 461.60 euros  \n- **Número de meses:** 24  \n- **Total de pagos mensuales:**  \n  $$\n  461.60 \\times 24 = 11078.40 \\text{ euros}\n  $$\n\n---\n\n### **3. Calculamos el total de deudas y pagos:**\n\n- **Total de deudas:** 719.88 euros  \n- **Total de pagos:** 11078.40 euros  \n- **Total de deudas + pagos:**  \n  $$\n  719.88 + 11078.40 = 11798.28 \\text{ euros}\n  $$\n\n---\n\n### **4. Calculamos el ratio de endeudamiento:**\n\n$$\n\\text{Ratio de endeudamiento} = \\frac{\\text{Total de deudas + pagos}}{\\text{Total de deudas + pagos}} \\times 100\n$$\n\n$$\n\\text{Ratio de endeudamiento} = \\frac{11798.28}{11798.28} \\times 100 = 100\\%\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{100.00}\n$$",
+        "correct": false,
+        "seconds": 6.11
+      },
+      "with_tools": {
+        "answer": "To calculate the debt ratio, we need to determine the total monthly debt payments and compare it to the monthly income. The total monthly debt payments include the monthly loan payment and the other monthly debts.\n\n1. **Total Monthly Debt Payments**:\n   - Monthly loan payment: 461.60 euros\n   - Other monthly debts: 59.99 euros\n   - Total monthly debt payments: 461.60 + 59.99 = 521.59 euros\n\n2. **Monthly Income**:\n   - Monthly income: 1797.29 euros\n\n3. **Debt Ratio Calculation**:\n   - Debt ratio = (Total monthly debt payments / Monthly income) * 100\n   - Debt ratio = (521.59 / 1797.29) * 100\n\nThe result is calculated as follows:\n- 521.59 / 1797.29 = 0.2906\n- 0.2906 * 100 = 29.06\n\nThe debt ratio is 29.06%.",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 3.89
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00109",
+      "tipo": "ratio_endeudamiento",
+      "expected": "18.46",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calculamos el total de deudas mensuales existentes:**\n\n- **Deudas mensuales:** 476.39 euros  \n- **Cuota mensual de préstamo:** 78.48 euros\n\n**Total de deudas mensuales:**  \n$$\n476.39 + 78.48 = 554.87 \\text{ euros}\n$$\n\n---\n\n### **2. Calculamos el total de ingresos mensuales:**\n\n- **Ingresos netos:** 3006.17 euros  \n- **Comisión de apertura:** 50.89 euros\n\n**Total de ingresos mensuales:**  \n$$\n3006.17 + 50.89 = 3057.06 \\text{ euros}\n$$\n\n---\n\n### **3. Calculamos el ratio de endeudamiento:**\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{\\text{Total de deudas mensuales}}{\\text{Ingresos netos mensuales}} \\right) \\times 100\n$$\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{554.87}{3057.06} \\right) \\times 100 \\approx 18.19\\%\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{18.19}\n$$",
+        "correct": false,
+        "seconds": 4.97
+      },
+      "with_tools": {
+        "answer": "The total monthly debt payments include the loan payment of 78.48 euros and other monthly debts of 476.39 euros. The total monthly debt payments are $78.48 + 476.39 = 554.87$ euros.\n\nThe debt ratio is calculated as $\\frac{554.87}{3006.17} \\times 100 = 18.46$%.\n\nThe resulting debt ratio is $18.46$.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 3176.19,
+              "annual_rate_pct": 8.63,
+              "months": 48,
+              "upfront_fee": 50.89,
+              "monthly_income": 3006.17,
+              "other_monthly_debts": 476.39
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 6.28
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00106",
+      "tipo": "ratio_endeudamiento",
+      "expected": "33.96",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calcular el total de deudas mensuales existentes:**\n\n- **Cuota mensual de préstamo:** 503.11 €\n- **Comisión de apertura:** 50.99 €\n- **Otros deudas mensuales:** 147.82 €\n\n**Total de deudas mensuales:**\n\n$$\n503.11 + 50.99 + 147.82 = 701.92 \\text{ €}\n$$\n\n---\n\n### **2. Calcular el total de ingresos mensuales:**\n\n- **Ingresos netos:** 1916.55 €/mes\n\n---\n\n### **3. Calcular el ratio de endeudamiento:**\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{\\text{Total de deudas mensuales}}{\\text{Ingresos netos}} \\right) \\times 100\n$$\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{701.92}{1916.55} \\right) \\times 100 \\approx 36.63\\%\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{36.63}\n$$",
+        "correct": false,
+        "seconds": 4.49
+      },
+      "with_tools": {
+        "answer": "<answer>33.96</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 24847.9,
+              "annual_rate_pct": 7.94,
+              "months": 60,
+              "upfront_fee": 50.99,
+              "monthly_income": 1916.55,
+              "other_monthly_debts": 147.82
+            },
+            "ok": true
+          },
+          {
+            "name": "save_credit_report",
+            "arguments": {
+              "applicant_id": "example_id",
+              "decision": "approve",
+              "summary": "The debt ratio is 34.00%."
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 5.5
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00072",
+      "tipo": "ratio_endeudamiento",
+      "expected": "21.40",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calculamos el total de deudas mensuales existentes:**\n\n- **Deudas mensuales:** 70.71 euros  \n- **Número de meses:** 60  \n- **Total de deudas mensuales:**  \n  $$\n  70.71 \\times 60 = 4242.60 \\text{ euros}\n  $$\n\n---\n\n### **2. Calculamos el total de pagos mensuales:**\n\n- **Cuota mensual:** 508.56 euros  \n- **Número de meses:** 60  \n- **Total de pagos mensuales:**  \n  $$\n  508.56 \\times 60 = 30513.60 \\text{ euros}\n  $$\n\n---\n\n### **3. Calculamos el total de deudas y pagos:**\n\n- **Total de deudas:** 4242.60 euros  \n- **Total de pagos:** 30513.60 euros  \n- **Total de endeudamiento resultante:**  \n  $$\n  4242.60 + 30513.60 = 34756.20 \\text{ euros}\n  $$\n\n---\n\n### **4. Calculamos el ratio de endeudamiento (en %):**\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{34756.20}{34756.20} \\right) \\times 100 = 100\\%\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{100.00}\n$$",
+        "correct": false,
+        "seconds": 6.16
+      },
+      "with_tools": {
+        "answer": "<answer>21.4</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 21988.28,
+              "annual_rate_pct": 13.73,
+              "months": 60,
+              "upfront_fee": 146.6,
+              "monthly_income": 2706.49,
+              "other_monthly_debts": 70.71
+            },
+            "ok": true
+          },
+          {
+            "name": "save_credit_report",
+            "arguments": {
+              "applicant_id": "example_id",
+              "decision": "approve",
+              "summary": "The debt ratio is 21.41%."
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 5.71
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00035",
+      "tipo": "ratio_endeudamiento",
+      "expected": "49.68",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calculamos el total de deudas mensuales existentes:**\n\n- **Deudas mensuales:** 327.36 euros  \n- **Número de meses:** 60  \n- **Total de deudas mensuales:**  \n  $$\n  327.36 \\times 60 = 19641.60 \\text{ euros}\n  $$\n\n---\n\n### **2. Calculamos el total de pagos mensuales:**\n\n- **Cuota mensual:** 295.96 euros  \n- **Número de meses:** 60  \n- **Total de pagos mensuales:**  \n  $$\n  295.96 \\times 60 = 17757.60 \\text{ euros}\n  $$\n\n---\n\n### **3. Calculamos el total de deudas y pagos:**\n\n- **Total de deudas:** 19641.60 euros  \n- **Total de pagos:** 17757.60 euros  \n- **Total de deudas + pagos:**  \n  $$\n  19641.60 + 17757.60 = 37399.20 \\text{ euros}\n  $$\n\n---\n\n### **4. Calculamos el ratio de endeudamiento:**\n\n$$\n\\text{Ratio de endeudamiento} = \\frac{\\text{Total de deudas + pagos}}{\\text{Total de préstamo}} \\times 100\n$$\n\n- **Total de préstamo:** 14157.75 euros  \n- **Ratio de endeudamiento:**  \n  $$\n  \\frac{37399.20}{14157.75} \\times 100 \\approx 264.00\\%\n  $$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{264.00}\n$$",
+        "correct": false,
+        "seconds": 6.48
+      },
+      "with_tools": {
+        "answer": "The debt ratio is calculated as follows:\n\n- Total monthly debt payments: 295.96 (loan payment) + 327.36 (other monthly debts) = 623.32 euros\n- Monthly income: 1254.68 euros\n- Debt ratio = (623.32 / 1254.68) * 100 = 49.68%\n\nThe final answer is:\n</think>\n\n<answer>49.68</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": true
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": false
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14157.75,
+              "annual_rate_pct": 9.3,
+              "months": 60,
+              "upfront_fee": 224.57,
+              "monthly_income": 1254.68,
+              "other_monthly_debts": 327.36
+            },
+            "ok": false
+          }
+        ],
+        "turns": 2,
+        "seconds": 49.18
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00103",
+      "tipo": "ratio_endeudamiento",
+      "expected": "41.60",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calculamos el total de deudas mensuales existentes:**\n\n- **Deudas mensuales:** 200.01 euros  \n- **Número de meses:** 12  \n- **Total de deudas mensuales:**  \n  $$\n  200.01 \\times 12 = 2400.12 \\text{ euros}\n  $$\n\n---\n\n### **2. Calculamos el total de pagos mensuales:**\n\n- **Cuota mensual:** 737.99 euros  \n- **Número de meses:** 36  \n- **Total de pagos mensuales:**  \n  $$\n  737.99 \\times 36 = 26567.64 \\text{ euros}\n  $$\n\n---\n\n### **3. Calculamos el total de deudas y pagos:**\n\n- **Total de deudas:** 2400.12 euros  \n- **Total de pagos:** 26567.64 euros  \n- **Total de deudas + pagos:**  \n  $$\n  2400.12 + 26567.64 = 28967.76 \\text{ euros}\n  $$\n\n---\n\n### **4. Calculamos el ratio de endeudamiento:**\n\n$$\n\\text{Ratio de endeudamiento} = \\frac{\\text{Total de deudas + pagos}}{\\text{Total de deudas + pagos}} \\times 100\\%\n$$\n\n$$\n\\text{Ratio de endeudamiento} = \\frac{28967.76}{28967.76} \\times 100\\% = 100\\%\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{100.00}\n$$",
+        "correct": false,
+        "seconds": 6.18
+      },
+      "with_tools": {
+        "answer": "The debt ratio is calculated as the total monthly debt payments (including the loan payment and other monthly debts) divided by the monthly income, then multiplied by 100. The result is 41.60%. \n\n<answer>41.60</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 23644.41,
+              "annual_rate_pct": 7.73,
+              "months": 36,
+              "upfront_fee": 378.0,
+              "monthly_income": 2254.55,
+              "other_monthly_debts": 200.01
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 5.83
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00141",
+      "tipo": "ratio_endeudamiento",
+      "expected": "73.03",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calculamos el total de la deuda mensual:**\n\n- **Cuota mensual del préstamo:** 1489.37 €\n- **Otras deudas mensuales:** 412.66 €\n\n**Total de deudas mensuales:**\n$$\n1489.37 + 412.66 = 1902.03 \\, \\text{€}\n$$\n\n---\n\n### **2. Calculamos el total de ingresos netos mensuales:**\n\n- **Ingresos netos:** 2604.56 €\n\n---\n\n### **3. Calculamos el ratio de endeudamiento:**\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{\\text{Total de deudas mensuales}}{\\text{Ingresos netos mensuales}} \\right) \\times 100\n$$\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{1902.03}{2604.56} \\right) \\times 100 \\approx 73.01\\%\n$$\n\n---\n\n### **Respuesta final:**\n$$\n\\boxed{73.01}\n$$",
+        "correct": false,
+        "seconds": 4.65
+      },
+      "with_tools": {
+        "answer": "To calculate the debt ratio, we need to determine the total monthly debt payments and compare it to the monthly income. The total monthly debt payments include the monthly loan payment and the other monthly debts.\n\n1. **Total Monthly Debt Payments**:\n   - Monthly loan payment: 1489.37 euros\n   - Other monthly debts: 412.66 euros\n   - Total monthly debt payments: 1489.37 + 412.66 = 1902.03 euros\n\n2. **Monthly Income**:\n   - Net monthly income: 2604.56 euros\n\n3. **Debt Ratio Calculation**:\n   - Debt ratio = (Total monthly debt payments / Monthly income) * 100\n   - Debt ratio = (1902.03 / 2604.56) * 100 ≈ 73.01%\n\nThe resulting debt ratio is 73.01%.",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 3.71
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00102",
+      "tipo": "ratio_endeudamiento",
+      "expected": "51.91",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calculamos el total de deudas mensuales existentes:**\n\n- **Cuota mensual de préstamo:** 596.28 €\n- **Comisión de apertura:** 371.32 €\n- **Deudas mensuales ya existentes:** 178.49 €\n\n**Total de deudas mensuales:**\n$$\n596.28 + 371.32 + 178.49 = 1146.09 \\, \\text{€}\n$$\n\n---\n\n### **2. Calculamos el ingreso mensual neto:**\n\n- **Ingresos netos:** 1492.42 €\n\n---\n\n### **3. Calculamos el ratio de endeudamiento:**\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{\\text{Total de deudas mensuales}}{\\text{Ingresos netos}} \\right) \\times 100\n$$\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{1146.09}{1492.42} \\right) \\times 100 \\approx 76.73\\%\n$$\n\n---\n\n### **Respuesta final:**\n$$\n\\boxed{76.73}\n$$",
+        "correct": false,
+        "seconds": 4.61
+      },
+      "with_tools": {
+        "answer": "To calculate the debt ratio, we need to determine the total monthly debt payments, including the loan payment and other monthly debts. The steps are as follows:\n\n1. **Total monthly debt payments**:\n   - Loan payment: 596.28 euros\n   - Other monthly debts: 178.49 euros\n   - Total monthly debt payments = 596.28 + 178.49 = 774.77 euros\n\n2. **Monthly income**:\n   - Monthly income: 1492.42 euros\n\n3. **Debt ratio**:\n   - Debt ratio = (Total monthly debt payments / Monthly income) * 100\n   - Debt ratio = (774.77 / 1492.42) * 100\n\nThe result is:\n\n<answer>32.16</answer>",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 2.99
+      }
+    },
+    {
+      "id": "ratio_endeudamiento_00023",
+      "tipo": "ratio_endeudamiento",
+      "expected": "25.18",
+      "without_tools": {
+        "answer": "Para calcular el **ratio de endeudamiento resultante**, seguimos estos pasos:\n\n---\n\n### **1. Calculamos el total de deudas mensuales existentes:**\n\n- **Deudas mensuales:** 474.51 euros  \n- **Cuota mensual de préstamo:** 507.81 euros  \n- **Comisión de apertura:** 92.64 euros\n\n**Total de deudas mensuales:**  \n$$\n474.51 + 92.64 = 567.15 \\text{ euros}\n$$\n\n---\n\n### **2. Calculamos el total de ingresos mensuales:**\n\n- **Ingresos netos:** 3901.44 euros/mes\n\n---\n\n### **3. Calculamos el ratio de endeudamiento:**\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{\\text{Total de deudas mensuales}}{\\text{Ingresos netos}} \\right) \\times 100\n$$\n\n$$\n\\text{Ratio de endeudamiento} = \\left( \\frac{567.15}{3901.44} \\right) \\times 100 \\approx 14.52\\%\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{14.52}\n$$",
+        "correct": false,
+        "seconds": 4.3
+      },
+      "with_tools": {
+        "answer": "To calculate the resulting debt ratio, we need to determine the total monthly debt payments, including the monthly loan payment and other monthly debts. The steps are as follows:\n\n1. **Total Monthly Debt Payments**:\n   - Monthly loan payment: 507.81 euros\n   - Other monthly debts: 474.51 euros\n   - Total monthly debt payments: 507.81 + 474.51 = 982.32 euros\n\n2. **Monthly Income**:\n   - Monthly income: 3901.44 euros\n\n3. **Debt Ratio Calculation**:\n   - Debt ratio = (Total monthly debt payments / Monthly income) * 100\n   - Debt ratio = (982.32 / 3901.44) * 100\n\nThe resulting debt ratio is:\n\n<answer>345.67</answer>",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 3.08
+      }
+    },
+    {
+      "id": "tae_00103",
+      "tipo": "tae",
+      "expected": "13.45",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, utilizamos la fórmula:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nDonde:\n- $\\text{Cuota mensual} = 690.63$ euros\n- $\\text{Capital prestado} = 14748.82$ euros\n- $n = 24$ meses\n\nPrimero calculamos el factor de la tasa mensual:\n\n$$\n\\left( \\frac{690.63}{14748.82} \\right)^{\\frac{12}{24}} = \\left( \\frac{690.63}{14748.82} \\right)^{0.5} \\approx (0.04696)^{0.5} \\approx 0.2167\n$$\n\nLuego, calculamos la TAE:\n\n$$\n\\text{TAE} = (0.2167 - 1) \\times 100 = -0.7833 \\times 100 = -78.33\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Deben haber errores en la fórmula o en los cálculos.\n\nLa fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{690.63}{14748.82} \\right)^{0.5} \\approx 0.2167\n$$\n\n$$\n\\text{TAE} = (0.2167 - 1) \\times 100 = -78.33\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Deben haber errores en la fórmula o en los cálculos.\n\nLa fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{690.63}{14748.82} \\right)^{0.5} \\approx 0.2167\n$$\n\n$$\n\\text{TAE} = (0.2167 - 1) \\times 100 = -78.33\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Deben haber errores en la fórmula o en los cálculos.\n\nLa fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{690.63}{14748.82} \\right)^{0.5} \\approx 0.2167\n$$\n\n$$\n\\text{TAE} = (0.2167 - 1) \\times 100 = -78.33\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Deben haber errores en la fórmula o en los cálculos.\n\nLa fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{690.63}{14748.82} \\right)^{0.5} \\approx 0.2167\n$$\n\n$$\n\\text{TAE} = (0.2167",
+        "correct": false,
+        "seconds": 98.56
+      },
+      "with_tools": {
+        "answer": "The Tasa Anual Equivalente (TAE) of the loan is 13.45%.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 14748.82,
+              "annual_rate_pct": 11.47,
+              "months": 24,
+              "upfront_fee": 177.32,
+              "other_monthly_debts": 126.2
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 5.68
+      }
+    },
+    {
+      "id": "tae_00147",
+      "tipo": "tae",
+      "expected": "15.30",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, utilizamos la fórmula:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nDonde:\n- $\\text{Cuota mensual} = 736.72$ euros\n- $\\text{Capital} = 26861.12$ euros\n- $n = 48$ meses\n\nPrimero calculamos el factor de la tasa mensual:\n\n$$\n\\left( \\frac{736.72}{26861.12} \\right)^{\\frac{12}{48}} = \\left( \\frac{736.72}{26861.12} \\right)^{0.25}\n$$\n\nCalculamos el cociente:\n\n$$\n\\frac{736.72}{26861.12} \\approx 0.02746\n$$\n\nLuego elevamos a la potencia de 0.25:\n\n$$\n0.02746^{0.25} \\approx 0.256\n$$\n\nAhora calculamos la TAE:\n\n$$\n\\text{TAE} = (0.256 - 1) \\times 100 = -0.744 \\times 100 = -74.4\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Debe haber un error en la fórmula.\n\nLa fórmula correcta para TAE es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos con cuidado:\n\n$$\n\\left( \\frac{736.72}{26861.12} \\right)^{0.25} \\approx 0.256\n$$\n\n$$\n\\text{TAE} = (0.256 - 1) \\times 100 = -74.4\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Debe haber un error en la fórmula.\n\nLa fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{736.72}{26861.12} \\right)^{0.25} \\approx 0.256\n$$\n\n$$\n\\text{TAE} = (0.256 - 1) \\times 100 = -74.4\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Debe haber un error en la fórmula.\n\nLa fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{736.72}{26861.12} \\right)^{0.25} \\approx 0.256\n$$\n\n$$\n\\text{TAE} = (0.256 - 1) \\times 100 = -74.4\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Debe haber un error en la fórmula.\n\nLa fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{736.72}{26861.12} \\right)^{0.25} \\approx 0.2",
+        "correct": false,
+        "seconds": 15.23
+      },
+      "with_tools": {
+        "answer": "The Tasa Anual Equivalente (TAE) of the loan is 15.3%.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 26861.12,
+              "annual_rate_pct": 14.2,
+              "months": 48,
+              "upfront_fee": 60.67,
+              "other_monthly_debts": 22.99
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 5.51
+      }
+    },
+    {
+      "id": "tae_00051",
+      "tipo": "tae",
+      "expected": "8.23",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, utilizamos la fórmula de la TAE basada en la **tasa nominal anual (TN)** y la **comisión de apertura**.\n\nLa fórmula para calcular la TAE es:\n\n$$\n\\text{TAE} = \\left(1 + \\frac{\\text{TN}}{12}\\right)^{12} - 1\n$$\n\nDonde:\n- $\\text{TN}$ es la tasa nominal anual (en decimal).\n\nEn este caso:\n- La tasa nominal anual es del **6.76%**, es decir, $ \\text{TN} = 0.0676 $.\n\nSustituimos en la fórmula:\n\n$$\n\\text{TAE} = \\left(1 + \\frac{0.0676}{12}\\right)^{12} - 1\n$$\n\nCalculamos paso a paso:\n\n1. $\\frac{0.0676}{12} = 0.00563333$\n2. $1 + 0.00563333 = 1.00563333$\n3. $1.00563333^{12} \\approx 1.0716$\n4. $1.0716 - 1 = 0.0716$\n\nPor lo tanto:\n\n$$\n\\text{TAE} \\approx 7.16\\%\n$$\n\n**Respuesta final:**\n\n$$\n\\boxed{716.00}\n$$",
+        "correct": false,
+        "seconds": 5.34
+      },
+      "with_tools": {
+        "answer": "To calculate the Tasa Anual Equivalente (TAE) of the loan, we need to use the loan metrics tool to determine the APR (Annual Percentage Rate) and then convert it to the TAE (Annual Percentage Rate). The TAE is the effective annual rate that reflects the true cost of borrowing, considering the compounding of interest and any other fees.\n\nGiven:\n- Principal: 12264.25 euros\n- Annual rate pct: 6.76%\n- Months: 24\n- Upfront fee: 145.34 euros\n- Other monthly debts: 348.81 euros\n- Monthly payment: 547.77 euros\n\nUsing the loan_metrics tool, we can compute the APR (TAE) as follows:\n\n1. **Compute the monthly payment**:\n   - The monthly payment is already provided as 547.77 euros.\n\n2. **Compute the APR (TAE)**:\n   - The APR is the nominal annual rate, which is given as 6.76%.\n\n3. **Convert the APR to TAE**:\n   - The TAE is the APR, which is already provided as 6.76%.\n\nThus, the Tasa Anual Equivalente (TAE) of the loan is 6.76%.\n\n<answer>676.00</answer>",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 4.38
+      }
+    },
+    {
+      "id": "tae_00036",
+      "tipo": "tae",
+      "expected": "6.28",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, seguimos estos pasos:\n\n---\n\n### **1. Datos del préstamo:**\n\n- **Valor del préstamo:** 9666.38 €  \n- **Plazo:** 24 meses  \n- **Cuota mensual:** 425.42 €  \n- **Comisión de apertura:** 78.18 €  \n- **Tipo nominal anual:** 5.31%  \n- **Método de cálculo:** Pago único al final del plazo\n\n---\n\n### **2. Calcular el interés total pagado:**\n\nLa cuota mensual es de 425.42 €, y se paga durante 24 meses:\n\n$$\n\\text{Interés total} = 24 \\times 425.42 = 10,210.08 \\, \\text{€}\n$$\n\n---\n\n### **3. Calcular el interés efectivo:**\n\nEl interés total pagado incluye:\n\n- **Interés por comisión de apertura:** 78.18 €  \n- **Interés por el préstamo:** 10,210.08 € - 78.18 € = 10,131.90 €\n\n---\n\n### **4. Calcular la Tasa Anual Equivalente (TAE):**\n\nLa TAE se calcula como el interés efectivo dividido por el valor del préstamo, multiplicado por 12 (para convertir a anual):\n\n$$\n\\text{TAE} = \\left( \\frac{10,131.90}{9666.38} \\right) \\times 12\n$$\n\n$$\n\\text{TAE} = \\left( \\frac{10,131.90}{9666.38} \\right) \\times 12 \\approx 1.05 \\times 12 = 12.6\\%\n$$\n\n---\n\n### **5. Redondear a 2 decimales:**\n\n$$\n\\boxed{12.60}\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{12.60}\n$$",
+        "correct": false,
+        "seconds": 7.68
+      },
+      "with_tools": {
+        "answer": "To calculate the Tasa Anual Equivalente (TAE) of the loan, we need to use the loan metrics tool to determine the APR (Annual Percentage Rate) and then convert it to the TAE (Annual Percentage Rate). The TAE is the effective annual rate that reflects the true cost of borrowing, considering the compounding of interest and any other fees.\n\nGiven:\n- Principal: 9666.38 euros\n- Annual rate pct: 5.31%\n- Months: 24\n- Upfront fee: 78.18 euros\n- Other monthly debts: 374.04 euros\n- Monthly payment: 425.42 euros\n\nUsing the loan_metrics tool, we can compute the APR (TAE) as follows:\n\n1. **Compute the monthly payment**:\n   - The monthly payment is already given as 425.42 euros.\n\n2. **Compute the APR (TAE)**:\n   - The APR is the nominal annual rate, which is given as 5.31%.\n\n3. **Convert the APR to TAE**:\n   - The TAE is the APR, which is already provided as 5.31%.\n\nThus, the Tasa Anual Equivalente (TAE) of the loan is 5.31%.\n\n<answer>5.31</answer>",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 4.84
+      }
+    },
+    {
+      "id": "tae_00040",
+      "tipo": "tae",
+      "expected": "14.02",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, utilizamos la fórmula de la TAE basada en la **tasa nominal anual** y la **cuota mensual**.\n\nLa fórmula para calcular la TAE es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nDonde:\n- $\\text{Cuota mensual} = 180.98$ euros\n- $\\text{Capital prestado} = 6734.76$ euros\n- $n = 48$ meses\n\nPrimero, calculamos el factor de la TAE:\n\n$$\n\\left( \\frac{180.98}{6734.76} \\right)^{\\frac{12}{48}} - 1\n$$\n\n$$\n\\left( \\frac{180.98}{6734.76} \\right)^{0.25} - 1\n$$\n\nCalculamos el cociente:\n\n$$\n\\frac{180.98}{6734.76} \\approx 0.02696\n$$\n\nLuego elevamos a la potencia de 0.25:\n\n$$\n0.02696^{0.25} \\approx 0.1296\n$$\n\nFinalmente, restamos 1:\n\n$$\n0.1296 - 1 = -0.8704\n$$\n\nMultiplicamos por 100 para obtener el porcentaje:\n\n$$\n-0.8704 \\times 100 = -87.04\\%\n$$\n\nPero esto es incorrecto, ya que la TAE debe ser positiva. Esto se debe a que la fórmula no es adecuada para calcular la TAE directamente con la cuota mensual y el capital prestado. La fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRepetimos el cálculo:\n\n$$\n\\left( \\frac{180.98}{6734.76} \\right)^{0.25} - 1 = 0.1296 - 1 = -0.8704\n$$\n\nPero esto es negativo, lo cual no es correcto. La fórmula debe ser:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\n$$\n\\left( \\frac{180.98}{6734.76} \\right)^{0.25} - 1 = 0.1296 - 1 = -0.8704\n$$\n\nPero esto es negativo, lo cual no es correcto. La fórmula debe ser:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\n$$\n\\left( \\frac{180.98}{6734.76} \\right)^{0.25} - 1 = 0.1296 - 1 = -0.8704\n$$\n\nPero esto es negativo, lo cual no es correcto. La fórmula debe ser:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\n$$\n\\left( \\frac{180.98}{6734.76} \\right)^{0.25} - 1 = 0.1296 - 1 = -0.8704\n$$\n\nPero esto es negativo, lo cual no es correcto. La fórmula debe ser",
+        "correct": false,
+        "seconds": 14.81
+      },
+      "with_tools": {
+        "answer": "To calculate the Tasa Anual Equivalente (TAE) of the loan, we need to use the loan metrics tool to determine the APR (Annual Percentage Rate) and then convert it to the TAE (Annual Percentage Rate). The TAE is the effective annual rate that reflects the true cost of borrowing, considering the compounding of interest and any other fees.\n\nThe given values are:\n- Principal: 6734.76 euros\n- Annual rate pct: 13.09%\n- Months: 48\n- Upfront fee: 12.39 euros\n- Other monthly debts: 404.44 euros\n- Monthly payment: 180.98 euros\n\nUsing the loan_metrics tool, we can compute the APR (TAE) as follows:\n\n1. **Compute the monthly payment**:\n   - The monthly payment is already given as 180.98 euros.\n\n2. **Compute the APR (TAE)**:\n   - The APR is the nominal annual rate, which is given as 13.09%.\n\n3. **Convert the APR to TAE**:\n   - The TAE is the APR, which is already provided as 13.09%.\n\nThus, the Tasa Anual Equivalente (TAE) of the loan is 13.09%.\n\n<answer>1309</answer>",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 4.37
+      }
+    },
+    {
+      "id": "tae_00009",
+      "tipo": "tae",
+      "expected": "10.21",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, utilizamos la fórmula:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nDonde:\n- $\\text{Cuota mensual} = 1806.02$ euros\n- $\\text{Capital prestado} = 20750.61$ euros\n- $n = 12$ meses\n\nPrimero calculamos el factor de la tasa mensual:\n\n$$\n\\left( \\frac{1806.02}{20750.61} \\right)^{\\frac{12}{12}} = \\frac{1806.02}{20750.61} \\approx 0.0866\n$$\n\nLuego, aplicamos la fórmula:\n\n$$\n\\text{TAE} = (0.0866 - 1) \\times 100 = -0.9134 \\times 100 = -91.34\\%\n$$\n\nPero esto no es correcto, ya que la tasa anual equivalente debe ser positiva. La fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRepetimos el cálculo con la fórmula correcta:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{1806.02}{20750.61} \\right)^{1} - 1 \\right) \\times 100 = (0.0866 - 1) \\times 100 = -91.34\\%\n$$\n\nPero esto no es correcto, ya que la tasa anual equivalente debe ser positiva. La fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRepetimos el cálculo con la fórmula correcta:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{1806.02}{20750.61} \\right)^{1} - 1 \\right) \\times 100 = (0.0866 - 1) \\times 100 = -91.34\\%\n$$\n\nPero esto no es correcto, ya que la tasa anual equivalente debe ser positiva. La fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRepetimos el cálculo con la fórmula correcta:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{1806.02}{20750.61} \\right)^{1} - 1 \\right) \\times 100 = (0.0866 - 1) \\times 100 = -91.34\\%\n$$\n\nPero esto no es correcto, ya que la tasa anual equivalente debe ser positiva. La fórmula correcta es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRepetimos el cálculo con la fórmula correcta:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{1806.02}{20750.61} \\right)^{1} - 1 \\right) \\times 100 = (0.0866 - 1) \\times 100 = -91.34\\%\n$$\n\nP",
+        "correct": false,
+        "seconds": 15.67
+      },
+      "with_tools": {
+        "answer": "To calculate the Tasa Anual Equivalente (TAE) of the loan, we need to use the loan metrics tool to determine the APR (Annual Percentage Rate) and then convert it to the TAE (Annual Percentage Rate). The TAE is the effective annual rate that reflects the true cost of borrowing, considering the compounding of interest and any other fees.\n\nThe given information includes:\n- Principal: 20750.61 euros\n- Annual rate (nominal): 8.10%\n- Months: 12\n- Upfront fee: 181.56 euros\n- Monthly payment: 1806.02 euros\n- Other monthly debts: 119.32 euros\n- Monthly income: 3855.63 euros\n\nUsing the loan_metrics tool, we can compute the APR (TAE) as follows:\n\n1. **Calculate the monthly payment**:\n   - The monthly payment is already provided as 1806.02 euros.\n\n2. **Calculate the total cost**:\n   - Total cost = Monthly payment * Number of months - Principal\n   - Total cost = 1806.02 * 12 - 20750.61 = 21672.24 - 20750.61 = 921.63 euros\n\n3. **Calculate the APR (TAE)**:\n   - APR = (Total cost / Principal) * 100\n   - APR = (921.63 / 20750.61) * 100 ≈ 4.43%\n\nThe TAE is the APR, which is already calculated as 4.43%.\n\nFinal answer:\n<answer>4.43</answer>",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 6.12
+      }
+    },
+    {
+      "id": "tae_00055",
+      "tipo": "tae",
+      "expected": "17.14",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, seguimos estos pasos:\n\n---\n\n### **1. Datos del préstamo:**\n\n- **Valor del préstamo:** 4784.20 €  \n- **Plazo:** 24 meses  \n- **Cuota mensual:** 230.13 €  \n- **Comisión de apertura:** 80.78 €  \n- **Tipo nominal anual (TN):** 14.19%  \n- **Mensualidad:** 230.13 €  \n- **Monto total a pagar:**  \n  $$\n  4784.20 + 80.78 = 4864.98 \\text{ €}\n  $$\n\n---\n\n### **2. Calcular el interés total:**\n\n$$\n\\text{Interés total} = \\text{Monto total a pagar} - \\text{Valor del préstamo} = 4864.98 - 4784.20 = 80.78 \\text{ €}\n$$\n\n---\n\n### **3. Calcular el interés mensual:**\n\n$$\n\\text{Interés mensual} = \\frac{80.78}{24} = 3.3658 \\text{ €}\n$$\n\n---\n\n### **4. Calcular el interés anual:**\n\n$$\n\\text{Interés anual} = 3.3658 \\times 12 = 40.3896 \\text{ €}\n$$\n\n---\n\n### **5. Calcular la Tasa Anual Equivalente (TAE):**\n\nLa TAE se calcula como:\n\n$$\n\\text{TAE} = \\left( \\frac{\\text{Interés anual}}{\\text{Valor del préstamo}} \\right) \\times 100\n$$\n\n$$\n\\text{TAE} = \\left( \\frac{40.3896}{4784.20} \\right) \\times 100 \\approx 0.008446 \\times 100 = 0.8446\\%\n$$\n\n---\n\n### **6. Redondear a 2 decimales:**\n\n$$\n\\text{TAE} \\approx 0.84\\%\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{0.84}\n$$",
+        "correct": false,
+        "seconds": 7.7
+      },
+      "with_tools": {
+        "answer": "To calculate the Tasa Anual Equivalente (TAE) of the loan, we need to use the loan metrics tool to determine the APR (Annual Percentage Rate) and then convert it to the TAE (Annual Percentage Rate). The TAE is the effective annual rate that reflects the true cost of borrowing, considering the compounding of interest and any other fees.\n\nGiven:\n- Principal: 4784.20 euros\n- Annual rate (nominal): 14.19%\n- Months: 24\n- Upfront fee: 80.78 euros\n- Monthly payment: 230.13 euros\n- Other monthly debts: 10.96 euros\n- Monthly income: 1903.13 euros\n\nUsing the `loan_metrics` tool, we can compute the APR (TAE) and the debt ratio. The TAE is the APR, which is already provided as 14.19%. However, we need to ensure that the APR is correctly calculated considering the fees and the monthly payment.\n\nThe TAE is the APR, which is 14.19%.\n\nFinal answer:\n<answer>14.19</answer>",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 3.85
+      }
+    },
+    {
+      "id": "tae_00078",
+      "tipo": "tae",
+      "expected": "7.39",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, seguimos estos pasos:\n\n---\n\n### **1. Datos del préstamo:**\n\n- **Monto del préstamo:** 2787.54 €  \n- **Plazo:** 12 meses  \n- **Cuota mensual:** 239.73 €  \n- **Comisión de apertura:** 19.17 €  \n- **Tipo nominal anual (TN):** 5.86%  \n- **Monto total a pagar:**  \n  $$\n  2787.54 + 19.17 = 2806.71 \\text{ €}\n  $$\n\n---\n\n### **2. Calcular el interés total pagado:**\n\n$$\n\\text{Interés total} = 12 \\times 239.73 - 2787.54 = 2876.76 - 2787.54 = 89.22 \\text{ €}\n$$\n\n---\n\n### **3. Calcular el interés efectivo anual (TEA):**\n\n$$\n\\text{TEA} = \\left( \\frac{\\text{Interés total}}{\\text{Monto principal}} \\right) \\times \\frac{12}{\\text{Plazo en meses}} \\times 100\n$$\n\n$$\n\\text{TEA} = \\left( \\frac{89.22}{2787.54} \\right) \\times \\frac{12}{12} \\times 100 = 3.20\\%\n$$\n\n---\n\n### **4. Considerar la comisión de apertura:**\n\nLa comisión de apertura (19.17 €) se paga al inicio, por lo que no se incluye en el interés efectivo anual.\n\n---\n\n### **5. Calcular la TAE con la comisión de apertura:**\n\nLa TAE se calcula como la tasa que hace que el valor presente de las cuotas sea igual al valor actual del préstamo.\n\n$$\n\\text{TAE} = \\left( \\frac{\\text{Monto total a pagar}}{\\text{Monto principal}} \\right)^{\\frac{1}{12}} - 1 \\times 100\n$$\n\n$$\n\\text{TAE} = \\left( \\frac{2806.71}{2787.54} \\right)^{\\frac{1}{12}} - 1 \\times 100\n$$\n\n$$\n\\text{TAE} \\approx (1.0068)^{\\frac{1}{12}} - 1 \\times 100 \\approx 0.0057 \\times 100 = 0.57\\%\n$$\n\n---\n\n### **6. Redondear a 2 decimales:**\n\n$$\n\\boxed{5.73}\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{5.73}\n$$",
+        "correct": false,
+        "seconds": 9.86
+      },
+      "with_tools": {
+        "answer": "To calculate the Tasa Anual Equivalente (TAE) of the loan, we need to use the loan metrics tool to determine the APR (Annual Percentage Rate) and then convert it to the TAE (Annual Percentage Rate). The TAE is the effective annual rate that reflects the true cost of borrowing, considering the compounding of interest and any other fees.\n\nUsing the loan metrics tool with the given parameters:\n- Principal: 2787.54 euros\n- Annual rate pct: 5.86%\n- Months: 12\n- Upfront fee: 19.17 euros\n- Other monthly debts: 485.35 euros\n- Monthly income: 2578.49 euros\n\nThe tool will compute the APR and TAE based on the provided details. The result will be the TAE, which is the effective annual rate of the loan.\n\nThe TAE is calculated as follows:\n- The APR is the nominal annual rate, which is 5.86%.\n- The TAE is the APR adjusted for the compounding effect and any other fees, which is calculated using the loan metrics tool.\n\nThe TAE of this loan is 5.86%.",
+        "correct": false,
+        "tool_calls": [],
+        "turns": 1,
+        "seconds": 3.81
+      }
+    },
+    {
+      "id": "tae_00105",
+      "tipo": "tae",
+      "expected": "8.31",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, utilizamos la fórmula:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nDonde:\n- $\\text{Cuota mensual} = 621.54$ euros\n- $\\text{Capital prestado} = 25696.00$ euros\n- $n = 48$ meses\n\nPrimero calculamos el factor de la tasa:\n\n$$\n\\left( \\frac{621.54}{25696.00} \\right)^{\\frac{12}{48}} = \\left( 0.02413 \\right)^{0.25} \\approx 0.1245\n$$\n\nLuego, calculamos la TAE:\n\n$$\n\\text{TAE} = (0.1245 - 1) \\times 100 = -0.8755 \\times 100 = -87.55\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Deben haber errores en la fórmula o en los cálculos.\n\nLa fórmula correcta para TAE es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{621.54}{25696.00} \\right)^{\\frac{12}{48}} = (0.02413)^{0.25} \\approx 0.1245\n$$\n\n$$\n\\text{TAE} = (0.1245 - 1) \\times 100 = -87.55\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Deben haber errores en la fórmula o en los cálculos.\n\nLa fórmula correcta para TAE es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{621.54}{25696.00} \\right)^{\\frac{12}{48}} = (0.02413)^{0.25} \\approx 0.1245\n$$\n\n$$\n\\text{TAE} = (0.1245 - 1) \\times 100 = -87.55\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Deben haber errores en la fórmula o en los cálculos.\n\nLa fórmula correcta para TAE es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{621.54}{25696.00} \\right)^{\\frac{12}{48}} = (0.02413)^{0.25} \\approx 0.1245\n$$\n\n$$\n\\text{TAE} = (0.1245 - 1) \\times 100 = -87.55\\%\n$$\n\nPero esto no es correcto, ya que la TAE debe ser positiva. Deben haber errores en la fórmula o en los cálculos.\n\nLa fórmula correcta para TAE es:\n\n$$\n\\text{TAE} = \\left( \\left( \\frac{\\text{Cuota mensual}}{\\text{Capital prestado}} \\right)^{\\frac{12}{n}} - 1 \\right) \\times 100\n$$\n\nRecalculamos:\n\n$$\n\\left( \\frac{621.54}{",
+        "correct": false,
+        "seconds": 14.83
+      },
+      "with_tools": {
+        "answer": "The Tasa Anual Equivalente (TAE) of the loan is 8.31%.",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 25696.0,
+              "annual_rate_pct": 7.52,
+              "months": 48,
+              "upfront_fee": 239.85,
+              "other_monthly_debts": 412.16
+            },
+            "ok": true
+          }
+        ],
+        "turns": 2,
+        "seconds": 5.19
+      }
+    },
+    {
+      "id": "tae_00132",
+      "tipo": "tae",
+      "expected": "8.75",
+      "without_tools": {
+        "answer": "Para calcular la **Tasa Anual Equivalente (TAE)** de un préstamo, seguimos estos pasos:\n\n---\n\n### **1. Datos del préstamo:**\n\n- **Valor del préstamo:** 8329.41 €  \n- **Plazo:** 24 meses  \n- **Cuota mensual:** 373.12 €  \n- **Comisión de apertura:** 114.24 €  \n- **Tipo nominal anual:** 7.05%  \n- **Método de cálculo:** Interés simple o compuesto (en este caso, se asume que se aplica interés compuesto, ya que es el más común en préstamos).\n\n---\n\n### **2. Calcular el interés total del préstamo:**\n\nLa cuota mensual es de 373.12 €, y se paga durante 24 meses.\n\n$$\n\\text{Interés total} = 24 \\times 373.12 - 8329.41 = 9000.48 - 8329.41 = 671.07 \\, \\text{€}\n$$\n\n---\n\n### **3. Calcular el interés efectivo anual (TEA):**\n\nEl interés total es de 671.07 €, y el préstamo se paga en 24 meses. Para calcular la TAE, necesitamos convertir el interés efectivo anual a una tasa mensual y luego a una tasa anual.\n\n#### **a. Calcular la tasa mensual efectiva:**\n\n$$\n\\text{Tasa mensual efectiva} = \\frac{671.07}{8329.41} \\approx 0.0800 \\, \\text{(o 8.00%)}\n$$\n\n#### **b. Calcular la tasa anual efectiva (TAE):**\n\n$$\n\\text{TAE} = (1 + 0.0800)^{12} - 1 \\approx (1.0800)^{12} - 1\n$$\n\nCalculamos:\n\n$$\n(1.08)^{12} \\approx 2.5181\n$$\n\n$$\n\\text{TAE} \\approx 2.5181 - 1 = 1.5181\n$$\n\n$$\n\\text{TAE} \\approx 151.81\\%\n$$\n\n---\n\n### **4. Redondear a 2 decimales:**\n\n$$\n\\boxed{151.81}\n$$\n\n---\n\n### **Respuesta final:**\n\n$$\n\\boxed{151.81}\n$$",
+        "correct": false,
+        "seconds": 8.6
+      },
+      "with_tools": {
+        "answer": "The Tasa Anual Equivalente (TAE) is calculated based on the Annual Percentage Rate (APR) obtained from the loan metrics tool. The APR is 8.75%, and the TAE is the APR adjusted for the compounding effect and other fees.\n\nThe TAE is 8.75%. \n\n<answer>875.00</answer>",
+        "correct": true,
+        "tool_calls": [
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8329.41,
+              "annual_rate_pct": 7.05,
+              "months": 24,
+              "upfront_fee": 114.24,
+              "monthly_income": 928.84,
+              "other_monthly_debts": 210.44
+            },
+            "ok": true
+          },
+          {
+            "name": "loan_metrics",
+            "arguments": {
+              "principal": 8329.41,
+              "annual_rate_pct": 7.05,
+              "months": 24,
+              "upfront_fee": 114.24,
+              "monthly_income": 928.84,
+              "other_monthly_debts": 210.44
+            },
+            "ok": false
+          }
+        ],
+        "turns": 2,
+        "seconds": 7.11
+      }
+    }
+  ]
+}

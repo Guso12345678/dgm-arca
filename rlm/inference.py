@@ -29,13 +29,14 @@ from pathlib import Path
 from api.schemas import ReasoningResponse, VerifierVerdict
 from rlm.data import build_prompt
 from rlm.rewards import extract_answer, has_valid_format
-from rlm.verifier import ExactMatchVerifier, NumericVerifier, Verifier
+from rlm.verifier import CreditoVerifier, ExactMatchVerifier, NumericVerifier, Verifier
 
 VERIFIERS: dict[str, type[Verifier]] = {
     "numeric": NumericVerifier,
     "exact_match": ExactMatchVerifier,
-    # Tu turno: register your domain verifier here, e.g. "sql": SQLResultVerifier
+    "credito": CreditoVerifier,
 }
+    # Tu turno: register your domain verifier here, e.g. "sql": SQLResultVerifier
 
 THINK_PATTERN = re.compile(r"<think>(?P<think>.*?)</think>", re.DOTALL)
 

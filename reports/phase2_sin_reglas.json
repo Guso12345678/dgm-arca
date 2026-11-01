@@ -1,0 +1,982 @@
+{
+  "summary": {
+    "tool_selection_accuracy": 0.9696969696969697,
+    "argument_accuracy": 0.9696969696969697,
+    "n_cases": 33
+  },
+  "rows": [
+    {
+      "query": "¿Cuál es la cuota mensual de un préstamo de 12000 euros a 36 meses con un tipo nominal anual del 8.5%?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 12000,
+        "annual_rate_pct": 8.5,
+        "months": 36
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 12000,
+            "annual_rate_pct": 8.5,
+            "months": 36
+          },
+          "result": {
+            "monthly_payment": 378.81,
+            "total_cost": 1637.16,
+            "apr_pct": 8.84,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.18847640603780746
+        }
+      ],
+      "answer": "La cuota mensual del préstamo es de **378.81 euros**.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Calcula la TAE de un préstamo de 5000 euros a 24 meses al 9.9% nominal anual con una comisión de apertura de 100 euros.",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 5000,
+        "annual_rate_pct": 9.9,
+        "months": 24,
+        "upfront_fee": 100
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 5000,
+            "annual_rate_pct": 9.9,
+            "months": 24,
+            "upfront_fee": 100
+          },
+          "result": {
+            "monthly_payment": 230.49,
+            "total_cost": 631.76,
+            "apr_pct": 12.6,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.11485721915960312
+        }
+      ],
+      "answer": "La TAE del préstamo es del 12.6%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Quiero un préstamo de 20000 euros a 60 meses al 7%. ¿Cuánto pagaré en total de intereses?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 20000,
+        "annual_rate_pct": 7,
+        "months": 60
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 20000,
+            "annual_rate_pct": 7,
+            "months": 60
+          },
+          "result": {
+            "monthly_payment": 396.02,
+            "total_cost": 3761.2,
+            "apr_pct": 7.23,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.11520087718963623
+        }
+      ],
+      "answer": "En total, pagarás 3761.2 euros de intereses durante el préstamo.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Gano 2100 euros netos al mes y ya pago 150 euros de otras deudas. Si pido 9000 euros a 48 meses al 11.2%, ¿qué ratio de endeudamiento tendría?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 9000,
+        "annual_rate_pct": 11.2,
+        "months": 48,
+        "monthly_income": 2100,
+        "other_monthly_debts": 150
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 9000,
+            "annual_rate_pct": 11.2,
+            "months": 48,
+            "monthly_income": 2100,
+            "other_monthly_debts": 150
+          },
+          "result": {
+            "monthly_payment": 233.48,
+            "total_cost": 2207.04,
+            "apr_pct": 11.79,
+            "debt_ratio_pct": 18.26
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.13455376029014587
+        }
+      ],
+      "answer": "The debt ratio is calculated as the monthly debt payments divided by the monthly income. In this case, the monthly debt payments are 150 euros, and the monthly income is 2100 euros.\n\n$$\n\\text{Debt Ratio} = \\frac{150}{2100} \\approx 18.26\\%\n$$\n\nSo, the debt ratio is approximately 18.26%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Un cliente con ingresos netos de 1800 euros al mes pide 6000 euros a 24 meses al 10%. ¿Qué porcentaje de sus ingresos se llevaría la cuota?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 6000,
+        "annual_rate_pct": 10,
+        "months": 24,
+        "monthly_income": 1800
+      },
+      "tool_calls": [],
+      "answer": "To determine the percentage of the applicant's monthly income that would be used for the loan payment, we can use the `loan_metrics` function. Here are the parameters:\n\n- `principal`: 6000 euros\n- `annual_rate_pct`: 10%\n- `months`: 24\n- `monthly_income`: 1800 euros\n\nLet's compute the monthly payment and the debt ratio.\n\n1. **Monthly Payment**:\n   $$\n   \\text{Monthly Payment} = \\frac{6000 \\times 0.10 \\times (1 + 0.10)^{24}}{(1 + 0.10)^{24} - 1}\n   $$\n   $$\n   \\text{Monthly Payment} = \\frac{6000 \\times 0.10 \\times 10.06299099}{10.06299099 - 1}\n   $$\n   $$\n   \\text{Monthly Payment} = \\frac{6000 \\times 0.10 \\times 10.06299099}{9.06299099}\n   $$\n   $$\n   \\text{Monthly Payment} = \\frac{6000 \\times 1.006299099}{9.06299099}\n   $$\n   $$\n   \\text{Monthly Payment} = \\frac{6037.794599}{9.06299099}\n   $$\n   $$\n   \\text{Monthly Payment} \\approx 666.00 \\text{ euros}\n   $$\n\n2. **Debt Ratio**:\n   $$\n   \\text{Debt Ratio} = \\frac{\\text{Monthly Payment}}{\\text{Monthly Income}} \\times 100\n   $$\n   $$\n   \\text{Debt Ratio} = \\frac{666.00}{1800} \\times 100\n   $$\n   $$\n   \\text{Debt Ratio} \\approx 37.00\\%\n   $$\n\nThe monthly payment is approximately 666.00 euros, and the debt ratio is approximately 37.00% of the monthly income.",
+      "selection_ok": false,
+      "arguments_ok": false
+    },
+    {
+      "query": "Calcula el coste total del crédito de 15000 euros a 48 meses, tipo nominal 6.5% y comisión de apertura de 150 euros.",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 15000,
+        "annual_rate_pct": 6.5,
+        "months": 48,
+        "upfront_fee": 150
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 15000,
+            "annual_rate_pct": 6.5,
+            "months": 48,
+            "upfront_fee": 150
+          },
+          "result": {
+            "monthly_payment": 355.72,
+            "total_cost": 2224.56,
+            "apr_pct": 7.25,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.1079430803656578
+        }
+      ],
+      "answer": "El coste total del crédito es de **2224.56 euros**, incluyendo la comisión de apertura de **150 euros** y los pagos mensuales de **355.72 euros**. El tipo de interés anual efectivo (TAE) es del **7.25%** y el ratio de deuda sobre ingresos mensuales es **null** (no se proporcionó información sobre ingresos mensuales).",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Cuánto costaría al mes un préstamo de 3000 euros a 12 meses al 14.5%?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 3000,
+        "annual_rate_pct": 14.5,
+        "months": 12
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 3000,
+            "annual_rate_pct": 14.5,
+            "months": 12
+          },
+          "result": {
+            "monthly_payment": 270.07,
+            "total_cost": 240.84,
+            "apr_pct": 15.51,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.0697234645485878
+        }
+      ],
+      "answer": "El pago mensual del préstamo sería de **270,07 euros**, el costo total de todo el préstamo es **240,84 euros**, el TAE (tasa anual efectiva) es **15,51%** y el ratio deuda/income es **null** (ya que no se proporcionó ingreso mensual).",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Tengo una oferta de 25000 euros a 60 meses al 5.9% con comisión de apertura de 250 euros. ¿Cuál es su TAE?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 25000,
+        "annual_rate_pct": 5.9,
+        "months": 60,
+        "upfront_fee": 250
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 25000,
+            "annual_rate_pct": 5.9,
+            "months": 60,
+            "upfront_fee": 250
+          },
+          "result": {
+            "monthly_payment": 482.16,
+            "total_cost": 4179.6,
+            "apr_pct": 6.5,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.07094349712133408
+        }
+      ],
+      "answer": "La TAE (Tasa Anual Promedio) es de 6.5%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Con ingresos netos de 3200 euros al mes y 400 euros de otras deudas mensuales, ¿qué ratio de endeudamiento tendré si contrato 18000 euros a 72 meses al 8%?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 18000,
+        "annual_rate_pct": 8,
+        "months": 72,
+        "monthly_income": 3200,
+        "other_monthly_debts": 400
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 18000,
+            "annual_rate_pct": 8,
+            "months": 72,
+            "monthly_income": 3200,
+            "other_monthly_debts": 400
+          },
+          "result": {
+            "monthly_payment": 315.6,
+            "total_cost": 4723.2,
+            "apr_pct": 8.3,
+            "debt_ratio_pct": 22.36
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.08010212332010269
+        }
+      ],
+      "answer": "El ratio de endeudamiento que tendrás es del 22.36%. Esto se calcula dividiendo el pago mensual de la deuda entre el ingreso neto mensual, considerando también las otras deudas mensuales.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Qué cuota mensual saldría para un crédito de 4500 euros a 18 meses con interés nominal del 0%?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 4500,
+        "annual_rate_pct": 0,
+        "months": 18
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 4500,
+            "annual_rate_pct": 0,
+            "months": 18
+          },
+          "result": {
+            "monthly_payment": 250.0,
+            "total_cost": 0.0,
+            "apr_pct": 0.0,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.08796714246273041
+        }
+      ],
+      "answer": "La cuota mensual para un crédito de 4500 euros a 18 meses con interés nominal del 0% sería de **250 euros**.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Un préstamo de 30000 euros a 60 meses al 4.5% con 300 euros de comisión: dame la cuota, el coste total y la TAE.",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 30000,
+        "annual_rate_pct": 4.5,
+        "months": 60,
+        "upfront_fee": 300
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 30000,
+            "annual_rate_pct": 4.5,
+            "months": 60,
+            "upfront_fee": 300
+          },
+          "result": {
+            "monthly_payment": 559.29,
+            "total_cost": 3857.4,
+            "apr_pct": 5.02,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.07458310574293137
+        },
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 30000,
+            "annual_rate_pct": 4.5,
+            "months": 60,
+            "upfront_fee": 300
+          },
+          "result": null,
+          "ok": false,
+          "error": "duplicate call: loan_metrics was already called with these arguments and returned {\"monthly_payment\": 559.29, \"total_cost\": 3857.4, \"apr_pct\": 5.02, \"debt_ratio_pct\": null}. Use that result instead of calling it again.",
+          "latency_ms": 0.0
+        },
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 30000,
+            "annual_rate_pct": 4.5,
+            "months": 60,
+            "upfront_fee": 300
+          },
+          "result": null,
+          "ok": false,
+          "error": "duplicate call: loan_metrics was already called with these arguments and returned {\"monthly_payment\": 559.29, \"total_cost\": 3857.4, \"apr_pct\": 5.02, \"debt_ratio_pct\": null}. Use that result instead of calling it again.",
+          "latency_ms": 0.0
+        }
+      ],
+      "answer": "La cuota del préstamo es de 559,29 euros, el coste total es de 3857,40 euros y la TAE es del 5,02%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Si pido 7500 euros a 30 meses al 9.25%, ¿cuánto devolveré en total?",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 7500,
+        "annual_rate_pct": 9.25,
+        "months": 30
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 7500,
+            "annual_rate_pct": 9.25,
+            "months": 30
+          },
+          "result": {
+            "monthly_payment": 280.98,
+            "total_cost": 929.4,
+            "apr_pct": 9.65,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.06842240691184998
+        }
+      ],
+      "answer": "Si pides un préstamo de 7500 euros a 30 meses al 9.25%, el total a pagar será de **929.4 euros**.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Calcula la cuota de un préstamo de 10000 euros a 24 meses al 12% anual.",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 10000,
+        "annual_rate_pct": 12,
+        "months": 24
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 10000,
+            "annual_rate_pct": 12,
+            "months": 24
+          },
+          "result": {
+            "monthly_payment": 470.73,
+            "total_cost": 1297.52,
+            "apr_pct": 12.68,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.07299892604351044
+        }
+      ],
+      "answer": "La cuota mensual del préstamo es de **470,73 euros**. El costo total del préstamo es de **1297,52 euros**, el TAE (tasa anual efectiva) es de **12,68%** y el ratio de deuda sobre ingreso mensual es **null** (ya que no se proporcionó información sobre el ingreso mensual).",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Es asumible un préstamo de 14000 euros a 48 meses al 10.4% para alguien con 2600 euros netos al mes? Dime el ratio de endeudamiento.",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 14000,
+        "annual_rate_pct": 10.4,
+        "months": 48,
+        "monthly_income": 2600
+      },
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 14000,
+            "annual_rate_pct": 10.4,
+            "months": 48,
+            "monthly_income": 2600
+          },
+          "result": {
+            "monthly_payment": 357.77,
+            "total_cost": 3172.96,
+            "apr_pct": 10.91,
+            "debt_ratio_pct": 13.76
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.07881131023168564
+        }
+      ],
+      "answer": "El ratio de endeudamiento es del 13.76%. Esto significa que el pago mensual de tu préstamo (357.77 euros) representa un porcentaje del ingreso neto mensual (2600 euros) de 13.76%. Si el ratio está por encima del límite recomendado, podría considerarse un riesgo para el crédito.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Cuál es el Euribor a 12 meses actual?",
+      "needs_tool": true,
+      "expected_tool": "get_euribor",
+      "expected_arguments": {
+        "tenor": "12M"
+      },
+      "tool_calls": [
+        {
+          "name": "get_euribor",
+          "arguments": {
+            "tenor": "12M"
+          },
+          "result": {
+            "tenor": "12M",
+            "period": "2026-09",
+            "rate_pct": 3.247,
+            "source": "ECB"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 156.5632475540042
+        }
+      ],
+      "answer": "El Euribor a 12 meses actual es del 3,247%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Dime el Euribor a 3 meses.",
+      "needs_tool": true,
+      "expected_tool": "get_euribor",
+      "expected_arguments": {
+        "tenor": "3M"
+      },
+      "tool_calls": [
+        {
+          "name": "get_euribor",
+          "arguments": {
+            "tenor": "3M"
+          },
+          "result": {
+            "tenor": "3M",
+            "period": "2026-09",
+            "rate_pct": 2.635,
+            "source": "ECB"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 156.8384114652872
+        }
+      ],
+      "answer": "El Euribor a 3 meses es del 2,635%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿A cuánto está hoy el Euribor a seis meses?",
+      "needs_tool": true,
+      "expected_tool": "get_euribor",
+      "expected_arguments": {
+        "tenor": "6M"
+      },
+      "tool_calls": [
+        {
+          "name": "get_euribor",
+          "arguments": {
+            "tenor": "6M"
+          },
+          "result": {
+            "tenor": "6M",
+            "period": "2026-09",
+            "rate_pct": 2.922,
+            "source": "ECB"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 162.67956048250198
+        }
+      ],
+      "answer": "El Euribor a seis meses hoy es del 2,922%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Necesito saber el Euribor a un mes.",
+      "needs_tool": true,
+      "expected_tool": "get_euribor",
+      "expected_arguments": {
+        "tenor": "1M"
+      },
+      "tool_calls": [
+        {
+          "name": "get_euribor",
+          "arguments": {
+            "tenor": "1M"
+          },
+          "result": {
+            "tenor": "1M",
+            "period": "2026-09",
+            "rate_pct": 2.414,
+            "source": "ECB"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 150.03523789346218
+        }
+      ],
+      "answer": "El Euribor a un mes (1M) es del 2,414%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Cómo está el Euribor a un año?",
+      "needs_tool": true,
+      "expected_tool": "get_euribor",
+      "expected_arguments": {
+        "tenor": "12M"
+      },
+      "tool_calls": [
+        {
+          "name": "get_euribor",
+          "arguments": {
+            "tenor": "12M"
+          },
+          "result": {
+            "tenor": "12M",
+            "period": "2026-09",
+            "rate_pct": 3.247,
+            "source": "ECB"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 101.24319419264793
+        }
+      ],
+      "answer": "El Euribor a un año (12M) es de **3,247%** según la información proporcionada por la ECB.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Consulta el tipo Euribor trimestral más reciente publicado por el BCE.",
+      "needs_tool": true,
+      "expected_tool": "get_euribor",
+      "expected_arguments": {
+        "tenor": "3M"
+      },
+      "tool_calls": [
+        {
+          "name": "get_euribor",
+          "arguments": {
+            "tenor": "3M"
+          },
+          "result": {
+            "tenor": "3M",
+            "period": "2026-09",
+            "rate_pct": 2.635,
+            "source": "ECB"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 100.49109719693661
+        }
+      ],
+      "answer": "El tipo Euribor trimestral más reciente publicado por el BCE es de **2,635%**.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Guarda el informe de crédito del cliente CL-1042 con decisión review y este resumen: 'Ratio 43%, cuota asumible'.",
+      "needs_tool": true,
+      "expected_tool": "save_credit_report",
+      "expected_arguments": {
+        "applicant_id": "CL-1042",
+        "decision": "review",
+        "summary": "Ratio 43%, cuota asumible"
+      },
+      "tool_calls": [
+        {
+          "name": "save_credit_report",
+          "arguments": {
+            "applicant_id": "CL-1042",
+            "decision": "review",
+            "summary": "Ratio 43%, cuota asumible"
+          },
+          "result": {
+            "saved": true,
+            "path": "reports/credit_reports/CL-1042_20261030T073739726978.md",
+            "decision": "review"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.3343084827065468
+        }
+      ],
+      "answer": "El informe de crédito del cliente CL-1042 ha sido guardado con éxito como un archivo Markdown en la ruta `reports/credit_reports/CL-1042_20261030T073739726978.md`. La decisión es \"review\" y el resumen proporcionado es \"Ratio 43%, cuota asumible\".",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Registra el informe del solicitante A-2201: aprobar. Resumen: 'Ingresos estables, ratio 28%'.",
+      "needs_tool": true,
+      "expected_tool": "save_credit_report",
+      "expected_arguments": {
+        "applicant_id": "A-2201",
+        "decision": "approve",
+        "summary": "Ingresos estables, ratio 28%"
+      },
+      "tool_calls": [
+        {
+          "name": "save_credit_report",
+          "arguments": {
+            "applicant_id": "A-2201",
+            "decision": "approve",
+            "summary": "Ingresos estables, ratio 28%"
+          },
+          "result": {
+            "saved": true,
+            "path": "reports/credit_reports/A-2201_20261030T073742768548.md",
+            "decision": "approve"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.2887314185500145
+        }
+      ],
+      "answer": "El informe del solicitante A-2201 ha sido registrado con éxito como un archivo Markdown en la ruta `reports/credit_reports/A-2201_20261030T073742768548.md`. La decisión es \"aprobar\" y el resumen proporcionado es \"Ingresos estables, ratio 28%\".",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Archiva un informe para el cliente ZX9 rechazando la solicitud. Resumen: 'Ratio 61%, supera el umbral'.",
+      "needs_tool": true,
+      "expected_tool": "save_credit_report",
+      "expected_arguments": {
+        "applicant_id": "ZX9",
+        "decision": "reject",
+        "summary": "Ratio 61%, supera el umbral"
+      },
+      "tool_calls": [
+        {
+          "name": "save_credit_report",
+          "arguments": {
+            "applicant_id": "ZX9",
+            "decision": "reject",
+            "summary": "Ratio 61%, supera el umbral"
+          },
+          "result": {
+            "saved": true,
+            "path": "reports/credit_reports/ZX9_20261030T073745297893.md",
+            "decision": "reject"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.2811318263411522
+        }
+      ],
+      "answer": "El informe ha sido archivado con éxito como `ZX9_20261030T073745297893.md` en la carpeta `reports/credit_reports/`. La decisión es **rechazar** la solicitud, y el resumen del informe es: **\"Ratio 61%, supera el umbral\"**.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Guarda el informe del cliente CL-0007 como revisión manual. Resumen: 'TAE alta, revisar ingresos'.",
+      "needs_tool": true,
+      "expected_tool": "save_credit_report",
+      "expected_arguments": {
+        "applicant_id": "CL-0007",
+        "decision": "review",
+        "summary": "TAE alta, revisar ingresos"
+      },
+      "tool_calls": [
+        {
+          "name": "save_credit_report",
+          "arguments": {
+            "applicant_id": "CL-0007",
+            "decision": "review",
+            "summary": "TAE alta, revisar ingresos"
+          },
+          "result": {
+            "saved": true,
+            "path": "reports/credit_reports/CL-0007_20261030T073747366799.md",
+            "decision": "review"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.24679303169250488
+        }
+      ],
+      "answer": "El informe del cliente CL-0007 ha sido guardado como revisión manual en el camino: `reports/credit_reports/CL-0007_20261030T073747366799.md`. El resumen proporcionado ha sido considerado y se ha registrado como \"TAE alta, revisar ingresos\". Si necesitas más información o ayuda con algo más, no dudes en pedírmelo.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Qué es la TAE y en qué se diferencia del tipo nominal?",
+      "needs_tool": false,
+      "tool_calls": [],
+      "answer": "La TAE (Tasa Anual Equivalente) es una tasa que representa la tasa efectiva anual de un préstamo o préstamo, considerando los intereses y los costes adicionales que se pagan durante el año. En cambio, el tipo nominal es la tasa de interés que se menciona en el contrato, sin considerar los costes adicionales.\n\nLa TAE se diferencia del tipo nominal en que el tipo nominal no incluye los costes de gestión, tasas de interés variables, o otros costes que se pagan durante el año. La TAE, por otro lado, se calcula considerando todos estos factores, lo que la hace más realista para comparar diferentes productos financieros.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Explica en dos frases qué es el ratio de endeudamiento.",
+      "needs_tool": false,
+      "tool_calls": [],
+      "answer": "El ratio de endeudamiento es una medida que indica el porcentaje de ingresos mensuales que se dedican a pagar deudas, y se calcula dividiendo el pago de deudas mensuales por el ingreso mensual.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Qué significa amortización francesa?",
+      "needs_tool": false,
+      "tool_calls": [],
+      "answer": "La amortización francesa es un tipo de pago de deuda que se realiza en cuotas constantes, donde cada cuota incluye tanto el interés como el capital del préstamo. Este tipo de amortización se basa en una tasa de interés fija y se divide en pagos iguales durante el plazo del préstamo. El objetivo es pagar el préstamo completo al final del plazo, sin necesidad de ajustes en las cuotas.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Hola, ¿qué puedes hacer por mí?",
+      "needs_tool": false,
+      "tool_calls": [],
+      "answer": "Puedo ayudarte con varios tipos de cálculos financieros, como calcular el pago mensual de un préstamo, calcular la tasa de interés efectiva anual (TAE), calcular el ratio de deuda, y guardar un informe de crédito. ¿Qué necesitas que haga?",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Qué es el Euribor?",
+      "needs_tool": false,
+      "tool_calls": [],
+      "answer": "El Euribor es una tasa de interés que se fija en la Unión Europea (UE) y se calcula en base a las tasas de interés de los bancos de la zona euro. Esta tasa se utiliza para determinar el interés de las deudas que se basan en la tasa Euribor, como las hipotecas y otros préstamos. El Euribor se actualiza cada mes y se refleja en la tasa de interés de los préstamos en la zona euro.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "¿Qué ventajas tiene, en general, reducir el plazo de un préstamo?",
+      "needs_tool": false,
+      "tool_calls": [],
+      "answer": "Reducir el plazo de un préstamo tiene varias ventajas, incluyendo:\n\n1. **Menor pago total**: Al reducir el plazo, el pago total del préstamo se reduce, lo que puede resultar en un ahorro significativo en el tiempo.\n\n2. **Mayor cuota mensual**: Aunque el pago total es menor, la cuota mensual puede aumentar debido a que el pago se distribuye en un número menor de meses.\n\n3. **Menor interés acumulado**: Al pagar el préstamo más rápido, el interés acumulado se reduce, lo que puede resultar en un ahorro adicional.\n\n4. **Mayor capacidad de pago**: Si el plazo se reduce, la capacidad de pago mensual puede aumentar, lo que puede ser beneficioso si el usuario tiene un ingreso mensual fijo.\n\n5. **Menor riesgo de impago**: Un plazo más corto reduce el riesgo de que el préstamo se impague, lo que puede ser beneficioso para el usuario.\n\nEstas ventajas dependen del tipo de préstamo y de las condiciones específicas.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Quiero un préstamo variable de 10000 euros a 36 meses al Euribor a 12 meses más 2 puntos. ¿Cuál sería la cuota?",
+      "needs_tool": true,
+      "expected_tool": "get_euribor",
+      "expected_arguments": {
+        "tenor": "12M"
+      },
+      "expected_chain": [
+        "get_euribor",
+        "loan_metrics"
+      ],
+      "tool_calls": [
+        {
+          "name": "get_euribor",
+          "arguments": {
+            "tenor": "12M"
+          },
+          "result": {
+            "tenor": "12M",
+            "period": "2026-09",
+            "rate_pct": 3.247,
+            "source": "ECB"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 105.22688273340464
+        },
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 10000,
+            "annual_rate_pct": 1.5,
+            "months": 36,
+            "upfront_fee": 0,
+            "monthly_income": null,
+            "other_monthly_debts": 0,
+            "monthly_payment": null
+          },
+          "result": {
+            "monthly_payment": 284.25,
+            "total_cost": 233.0,
+            "apr_pct": 1.51,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.05013216286897659
+        }
+      ],
+      "answer": "La cuota mensual del préstamo sería de **284,25 euros**.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Con el Euribor a 6 meses más un diferencial de 1.5 puntos, ¿cuál es la TAE de 8000 euros a 24 meses?",
+      "needs_tool": true,
+      "expected_tool": "get_euribor",
+      "expected_arguments": {
+        "tenor": "6M"
+      },
+      "expected_chain": [
+        "get_euribor",
+        "loan_metrics"
+      ],
+      "tool_calls": [
+        {
+          "name": "get_euribor",
+          "arguments": {
+            "tenor": "6M"
+          },
+          "result": {
+            "tenor": "6M",
+            "period": "2026-09",
+            "rate_pct": 2.922,
+            "source": "ECB"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 102.27734316140413
+        },
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 8000,
+            "annual_rate_pct": 8.5,
+            "months": 24,
+            "upfront_fee": 0,
+            "monthly_income": null,
+            "other_monthly_debts": 0,
+            "monthly_payment": null
+          },
+          "result": {
+            "monthly_payment": 363.65,
+            "total_cost": 727.6,
+            "apr_pct": 8.84,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.04858430474996567
+        }
+      ],
+      "answer": "La TAE de 8000 euros a 24 meses con el Euribor a 6 meses más un diferencial de 1.5 puntos es de 8.84%.",
+      "selection_ok": true,
+      "arguments_ok": true
+    },
+    {
+      "query": "Calcula la cuota de 5000 euros a 24 meses al 9% y guarda el informe del cliente C-77 con decisión approve y resumen 'Cuota asumible'.",
+      "needs_tool": true,
+      "expected_tool": "loan_metrics",
+      "expected_arguments": {
+        "principal": 5000,
+        "annual_rate_pct": 9,
+        "months": 24
+      },
+      "expected_chain": [
+        "loan_metrics",
+        "save_credit_report"
+      ],
+      "tool_calls": [
+        {
+          "name": "loan_metrics",
+          "arguments": {
+            "principal": 5000,
+            "annual_rate_pct": 9,
+            "months": 24
+          },
+          "result": {
+            "monthly_payment": 228.42,
+            "total_cost": 482.08,
+            "apr_pct": 9.38,
+            "debt_ratio_pct": null
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.10094232857227325
+        },
+        {
+          "name": "save_credit_report",
+          "arguments": {
+            "applicant_id": "C-77",
+            "decision": "approve",
+            "summary": "Cuota asumible"
+          },
+          "result": {
+            "saved": true,
+            "path": "reports/credit_reports/C-77_20261030T073808974705.md",
+            "decision": "approve"
+          },
+          "ok": true,
+          "error": null,
+          "latency_ms": 0.39546750485897064
+        }
+      ],
+      "answer": "El informe del cliente C-77 ha sido guardado con éxito en el camino `reports/credit_reports/C-77_20261030T073808974705.md`. La decisión es \"approve\" y el resumen es \"Cuota asumible\". La cuota mensual es de 228,42 euros, el costo total es de 482,08 euros, el TAE es del 9,38% y el ratio deuda/income es nulo.",
+      "selection_ok": true,
+      "arguments_ok": true
+    }
+  ]
+}

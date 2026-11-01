@@ -1,0 +1,1015 @@
+{
+  "k": 5,
+  "n_gold": 50,
+  "n_common": 50,
+  "strategies": {
+    "recursive-800": {
+      "n_matched": 50,
+      "n_unmatched": 0,
+      "bm25": {
+        "recall@5": 0.65,
+        "mrr": 0.4235,
+        "n_questions": 50
+      },
+      "dense_by_instruction": {
+        "default": {
+          "recall@5": 0.53,
+          "mrr": 0.42607936507936506,
+          "n_questions": 50
+        },
+        "minimal": {
+          "recall@5": 0.55,
+          "mrr": 0.4554365079365079,
+          "n_questions": 50
+        },
+        "domain": {
+          "recall@5": 0.53,
+          "mrr": 0.39310317460317457,
+          "n_questions": 50
+        }
+      },
+      "dense": {
+        "recall@5": 0.53,
+        "mrr": 0.42607936507936506,
+        "n_questions": 50
+      },
+      "lambda_sweep": [
+        {
+          "lambda": 0.0,
+          "recall@5": 0.53,
+          "mrr": 0.42607936507936506,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.1,
+          "recall@5": 0.58,
+          "mrr": 0.43969047619047624,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.2,
+          "recall@5": 0.62,
+          "mrr": 0.48607936507936506,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.3,
+          "recall@5": 0.63,
+          "mrr": 0.4863571428571429,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.4,
+          "recall@5": 0.67,
+          "mrr": 0.4805,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.5,
+          "recall@5": 0.65,
+          "mrr": 0.49224603174603176,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.6,
+          "recall@5": 0.69,
+          "mrr": 0.4895793650793651,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.7,
+          "recall@5": 0.65,
+          "mrr": 0.49721428571428566,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.8,
+          "recall@5": 0.65,
+          "mrr": 0.4588809523809524,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.9,
+          "recall@5": 0.67,
+          "mrr": 0.4472460317460317,
+          "n_questions": 50
+        },
+        {
+          "lambda": 1.0,
+          "recall@5": 0.65,
+          "mrr": 0.4235,
+          "n_questions": 50
+        }
+      ],
+      "best_lambda": 0.7,
+      "lambda_cv": {
+        "lambdas_chosen": [
+          0.7,
+          0.2
+        ],
+        "mrr_heldout": 0.468936507936508,
+        "recall@5_heldout": 0.5800000000000001
+      },
+      "chunking": {
+        "n_chunks": 543,
+        "mean_chars": 690.1786372007366,
+        "min_chars": 51,
+        "max_chars": 799
+      }
+    },
+    "semantic-0.7": {
+      "n_matched": 50,
+      "n_unmatched": 0,
+      "bm25": {
+        "recall@5": 0.68,
+        "mrr": 0.5455238095238095,
+        "n_questions": 50
+      },
+      "dense_by_instruction": {
+        "default": {
+          "recall@5": 0.66,
+          "mrr": 0.5030555555555556,
+          "n_questions": 50
+        },
+        "minimal": {
+          "recall@5": 0.7,
+          "mrr": 0.5437460317460318,
+          "n_questions": 50
+        },
+        "domain": {
+          "recall@5": 0.57,
+          "mrr": 0.4426904761904762,
+          "n_questions": 50
+        }
+      },
+      "dense": {
+        "recall@5": 0.66,
+        "mrr": 0.5030555555555556,
+        "n_questions": 50
+      },
+      "lambda_sweep": [
+        {
+          "lambda": 0.0,
+          "recall@5": 0.66,
+          "mrr": 0.5030555555555556,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.1,
+          "recall@5": 0.7,
+          "mrr": 0.5211666666666667,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.2,
+          "recall@5": 0.72,
+          "mrr": 0.5693015873015873,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.3,
+          "recall@5": 0.76,
+          "mrr": 0.5941666666666666,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.4,
+          "recall@5": 0.78,
+          "mrr": 0.6006666666666667,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.5,
+          "recall@5": 0.74,
+          "mrr": 0.6306904761904761,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.6,
+          "recall@5": 0.74,
+          "mrr": 0.6316666666666666,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.7,
+          "recall@5": 0.74,
+          "mrr": 0.5948333333333333,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.8,
+          "recall@5": 0.7,
+          "mrr": 0.5795,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.9,
+          "recall@5": 0.7,
+          "mrr": 0.5486904761904762,
+          "n_questions": 50
+        },
+        {
+          "lambda": 1.0,
+          "recall@5": 0.68,
+          "mrr": 0.5455238095238095,
+          "n_questions": 50
+        }
+      ],
+      "best_lambda": 0.6,
+      "lambda_cv": {
+        "lambdas_chosen": [
+          0.6,
+          0.5
+        ],
+        "mrr_heldout": 0.6186904761904761,
+        "recall@5_heldout": 0.74
+      },
+      "chunking": {
+        "n_chunks": 498,
+        "mean_chars": 719.4859437751004,
+        "min_chars": 3,
+        "max_chars": 1500
+      }
+    },
+    "semantic-p70": {
+      "n_matched": 50,
+      "n_unmatched": 0,
+      "bm25": {
+        "recall@5": 0.66,
+        "mrr": 0.5268888888888889,
+        "n_questions": 50
+      },
+      "dense_by_instruction": {
+        "default": {
+          "recall@5": 0.62,
+          "mrr": 0.40111111111111114,
+          "n_questions": 50
+        },
+        "minimal": {
+          "recall@5": 0.63,
+          "mrr": 0.4498888888888889,
+          "n_questions": 50
+        },
+        "domain": {
+          "recall@5": 0.5,
+          "mrr": 0.3882142857142857,
+          "n_questions": 50
+        }
+      },
+      "dense": {
+        "recall@5": 0.62,
+        "mrr": 0.40111111111111114,
+        "n_questions": 50
+      },
+      "lambda_sweep": [
+        {
+          "lambda": 0.0,
+          "recall@5": 0.62,
+          "mrr": 0.40111111111111114,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.1,
+          "recall@5": 0.65,
+          "mrr": 0.449079365079365,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.2,
+          "recall@5": 0.68,
+          "mrr": 0.4943333333333333,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.3,
+          "recall@5": 0.7,
+          "mrr": 0.5235238095238095,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.4,
+          "recall@5": 0.76,
+          "mrr": 0.5533333333333333,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.5,
+          "recall@5": 0.74,
+          "mrr": 0.5803571428571428,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.6,
+          "recall@5": 0.72,
+          "mrr": 0.5598333333333333,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.7,
+          "recall@5": 0.72,
+          "mrr": 0.5576111111111112,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.8,
+          "recall@5": 0.68,
+          "mrr": 0.5352460317460317,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.9,
+          "recall@5": 0.68,
+          "mrr": 0.5370555555555555,
+          "n_questions": 50
+        },
+        {
+          "lambda": 1.0,
+          "recall@5": 0.66,
+          "mrr": 0.5368888888888889,
+          "n_questions": 50
+        }
+      ],
+      "best_lambda": 0.5,
+      "lambda_cv": {
+        "lambdas_chosen": [
+          0.5,
+          0.4
+        ],
+        "mrr_heldout": 0.5528571428571428,
+        "recall@5_heldout": 0.74
+      },
+      "chunking": {
+        "n_chunks": 605,
+        "mean_chars": 592.0611570247934,
+        "min_chars": 3,
+        "max_chars": 1500
+      }
+    },
+    "semantic-p80": {
+      "n_matched": 50,
+      "n_unmatched": 0,
+      "bm25": {
+        "recall@5": 0.66,
+        "mrr": 0.5461904761904762,
+        "n_questions": 50
+      },
+      "dense_by_instruction": {
+        "default": {
+          "recall@5": 0.59,
+          "mrr": 0.4649126984126984,
+          "n_questions": 50
+        },
+        "minimal": {
+          "recall@5": 0.65,
+          "mrr": 0.49843650793650796,
+          "n_questions": 50
+        },
+        "domain": {
+          "recall@5": 0.59,
+          "mrr": 0.46419047619047615,
+          "n_questions": 50
+        }
+      },
+      "dense": {
+        "recall@5": 0.59,
+        "mrr": 0.4649126984126984,
+        "n_questions": 50
+      },
+      "lambda_sweep": [
+        {
+          "lambda": 0.0,
+          "recall@5": 0.59,
+          "mrr": 0.4649126984126984,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.1,
+          "recall@5": 0.66,
+          "mrr": 0.4857222222222222,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.2,
+          "recall@5": 0.7,
+          "mrr": 0.5434126984126985,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.3,
+          "recall@5": 0.74,
+          "mrr": 0.5691666666666666,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.4,
+          "recall@5": 0.76,
+          "mrr": 0.5716666666666667,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.5,
+          "recall@5": 0.72,
+          "mrr": 0.6111666666666666,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.6,
+          "recall@5": 0.74,
+          "mrr": 0.6006904761904761,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.7,
+          "recall@5": 0.74,
+          "mrr": 0.5861666666666667,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.8,
+          "recall@5": 0.7,
+          "mrr": 0.5795,
+          "n_questions": 50
+        },
+        {
+          "lambda": 0.9,
+          "recall@5": 0.67,
+          "mrr": 0.5528571428571428,
+          "n_questions": 50
+        },
+        {
+          "lambda": 1.0,
+          "recall@5": 0.66,
+          "mrr": 0.5461904761904762,
+          "n_questions": 50
+        }
+      ],
+      "best_lambda": 0.5,
+      "lambda_cv": {
+        "lambdas_chosen": [
+          0.6,
+          0.5
+        ],
+        "mrr_heldout": 0.5886666666666667,
+        "recall@5_heldout": 0.72
+      },
+      "chunking": {
+        "n_chunks": 496,
+        "mean_chars": 722.391129032258,
+        "min_chars": 3,
+        "max_chars": 1500
+      }
+    }
+  },
+  "calibration": {
+    "answerable": {
+      "mean": 0.7028361451625824,
+      "min": 0.5703440308570862,
+      "max": 0.8620414137840271
+    },
+    "unanswerable": {
+      "mean": 0.424586221575737,
+      "min": 0.2630036473274231,
+      "max": 0.5675723552703857
+    },
+    "balanced": 0.5703440308570862,
+    "balanced_accuracy": 1.0,
+    "keep_all": 0.5703440308570862
+  },
+  "generation": {
+    "answerable": {
+      "n": 50,
+      "with_citation": 0.7,
+      "invalid_citation_rate": 0.0,
+      "cites_relevant_chunk": 0.32,
+      "wrongly_abstained": 0.32
+    },
+    "unanswerable": {
+      "n": 8,
+      "abstained": 1.0
+    },
+    "rows": [
+      {
+        "question": "¿De cuánto tiempo dispone un cliente para echarse atrás tras firmar un crédito al consumo?",
+        "answer": "El cliente dispone de 14 días naturales para desistir del contrato de crédito al consumo. Esta información se encuentra en la ley [4fa8f08b1a-0225].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Cuál es el máximo que puede cobrar el prestamista por cancelar el préstamo antes de tiempo si queda más de un año de vida al contrato?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Y si al contrato le queda un año o menos cuando se amortiza anticipadamente?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Por debajo de qué importe un préstamo queda fuera de la ley de crédito al consumo?",
+        "answer": "La Ley de crédito al consumo se aplica a los contratos de crédito cuyo importe total es superior a 75.000 euros. Por lo tanto, los contratos de crédito cuyo importe total sea por debajo de 75.000 euros quedan fuera de la aplicación de la Ley.\n\nNo hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué ocurre con la aplicación de la ley a los créditos de importe muy elevado?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cómo se define la TAE en términos de lo que mide?",
+        "answer": "La TAE se define como el coste total del crédito expresado en forma de porcentaje anual del importe total del crédito. La TAE sirve para comparar diferentes ofertas. [4fa8f08b1a-0222]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué conceptos forman parte del coste total del crédito para el consumidor?",
+        "answer": "El coste total del crédito para el consumidor incluye todos los gastos, incluidos los intereses, las comisiones, los impuestos y cualquier otro tipo de gastos que el consumidor deba pagar en relación con el contrato de crédito y que sean conocidos por el prestamista, a excepción de los gastos de notaría. Esto se menciona en el artículo [4fa8f08b1a-0141].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Hasta cuándo valen las cifras del cuadro de amortización que recibe el cliente?",
+        "answer": "La información sobre el límite de validez de las cifras del cuadro de amortización que recibe el cliente se encuentra en el párrafo primero del apartado 1, párrafo primero, letra i) de la directiva UE [55643636df-0179]. Este párrafo indica que el cuadro de amortización deberá contener una indicación de que los datos del cuadro solo serán válidos hasta la siguiente modificación del tipo deudor o de dichos costes en virtud del contrato de crédito. \n\nNo hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cómo se gradúan las consecuencias cuando el documento del contrato contiene datos inexactos?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué deben establecer los Estados respecto a los procedimientos con los que el prestamista analiza la solvencia?",
+        "answer": "Los Estados miembros deben establecer procedimientos para la evaluación de la solvencia, según lo establecido en el apartado 1 y el apartado 5 de la Directiva. Además, deben garantizar que los procedimientos cumplan con los requisitos de calidad establecidos en la Directiva 2013/11/UE. [55643636df-0096]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué formación se exige a quien ofrece servicios adicionales junto con el crédito?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué debe describir el contrato en cuanto a pagar el préstamo antes de su vencimiento?",
+        "answer": "El contrato de crédito debe especificar el importe, el número y la periodicidad de los pagos que deberá efectuar el consumidor, así como el orden en que deben asignarse los pagos a distintos saldos pendientes sometidos a distintos tipos deudores a efectos de [55643636df-0174].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Cómo protege la directiva al cliente cuando la decisión de concederle crédito la toma un sistema automático?",
+        "answer": "La Directiva protege al cliente cuando la decisión de concederle crédito se toma mediante un sistema automático mediante el derecho a la explicación clara y comprensible de la evaluación de solvencia, incluida la lógica y los riesgos que implica el tratamiento automatizado de datos personales, así como el derecho a expresar su punto de vista y a solicitar una revisión de la evaluación de solvencia y la decisión sobre la concesión del crédito. Este derecho se menciona en el apartado 8 de la Directiva [55643636df-0169].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿En qué plazo y con qué costes puede un crédito de pago diferido quedar en el régimen especial de la directiva?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué derecho tiene el prestamista cuando el consumidor reembolsa anticipadamente el crédito?",
+        "answer": "El prestamista tiene derecho a una compensación justa y justificada objetivamente por los posibles costes directamente derivados del reembolso anticipado del crédito, siempre que el reembolso anticipado se produzca dentro de un período en el cual el tipo deudor sea fijo. La compensación no podrá ser superior al 1 por 100 del importe del crédito reembolsado anticipadamente si el período restante entre el reembolso anticipado y la terminación acordada del contrato de crédito es superior a un año. Si el período no supera un año, la compensación no podrá ser superior al 0,5 por 100 del importe del crédito reembolsado anticipadamente.\n\n[4fa8f08b1a-0188]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué ocurre con los costes de servicios accesorios que no pueden determinarse de antemano?",
+        "answer": "Los costes de servicios accesorios que no pueden determinarse de antemano deben ser informados a los consumidores en la fase precontractual. En este caso, los consumidores deben ser debidamente informados de su existencia. [55643636df-0044]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cómo se calcula la TAE cuando los supuestos generales no bastan?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué información mínima basta para créditos de facilidad de descubierto reembolsables en un mes?",
+        "answer": "La información mínima que basta para créditos de facilidad de descubierto reembolsables en un mes incluye los elementos indicados en las letras c), e) y g) del apartado 2 de este artículo. [4fa8f08b1a-0132]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué debe indicar la información previa sobre los pagos que hará el consumidor?",
+        "answer": "La información previa sobre los pagos que hará el consumidor debe incluir una declaración clara y concisa de que los contratos de crédito no prevén una garantía de reembolso del importe total del crédito salvo que se conceda dicha garantía. Esto se encuentra en el artículo 11 del texto consultado [4fa8f08b1a-0154].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Cuántos días tiene el consumidor para desistir según el modelo de información normalizada?",
+        "answer": "Según el modelo de información normalizada, el consumidor tiene derecho a desistir del contrato de crédito en un plazo de 14 días naturales. [55643636df-0138]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué nivel de protección del consumidor debe garantizar la Unión?",
+        "answer": "La Unión debe garantizar un nivel alto y equivalente de protección de los intereses de los consumidores [55643636df-0007].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cómo y con qué antelación debe el prestamista informar al consumidor de una modificación del tipo deudor?",
+        "answer": "El prestamista debe informar al consumidor de una modificación del tipo deudor con antelación suficiente antes de que la modificación entre en vigor. La información debe incluir, entre otros puntos, el calendario para la aplicación de las modificaciones, los medios de reclamación, el plazo para la presentación de la reclamación y la dirección de la autoridad competente. \n\nEsta información se encuentra en el artículo 22 de la Directiva, que establece que antes de modificar las condiciones del contrato de crédito, el prestamista debe comunicar al consumidor la información mencionada en los puntos a) a) d) y e). \n\nNo hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cuánto tiempo tiene el cliente para oponerse a unos cambios de condiciones comunicados por la entidad antes de que se den por aceptados?",
+        "answer": "El cliente tiene derecho a oponerse a unos cambios de condiciones comunicados por la entidad durante tres meses, a partir de la recepción de la comunicación. Esto se menciona en el párrafo siguiente del texto recuperado [4fa8f08b1a-0201].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿A qué obligación están sujetas las personas que trabajan para las autoridades competentes en crédito al consumo?",
+        "answer": "La obligación que están sujetas las personas que trabajan para las autoridades competentes en crédito al consumo se encuentra en el artículo 33 [55643636df-0204]. Este artículo establece que los prestamistas y los intermediarios de crédito exigen a su personal un nivel adecuado de conocimientos y competencia en relación con la fabricación, la oferta y la concesión de contratos de crédito, la realización de actividades de intermediación de crédito y la prestación de servicios de asesoramiento, así como en relación con los derechos de los consumidores en el ámbito de su actividad comercial. Además, las autoridades competentes deben supervisar el cumplimiento de estos requisitos y exigir a los prestamistas y a los intermediarios de crédito que proporcionen los elementos de prueba necesarios para la supervisión.",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué duración se supone para calcular la TAE de un descubierto cuya duración no se conoce?",
+        "answer": "La duración se supone como tres meses para calcular la TAE de un descubierto cuya duración no se conoce. Esto se establece en los pasajes [55643636df-0255] y [4fa8f08b1a-0216].",
+        "abstained": false,
+        "cited": 2,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué circunstancias puede tener en cuenta el prestamista al evaluar créditos para estudios o gastos sanitarios extraordinarios?",
+        "answer": "El prestamista puede tener en cuenta la existencia de pruebas suficientes de que los créditos concedidos con arreglo a la presente Directiva para financiar estudios o sufragar gastos sanitarios extraordinarios aportarán ingresos futuros al consumidor, o la existencia de bienes u otras formas de garantía que el consumidor pueda aportar para garantizar el préstamo. [55643636df-0061]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué cifras sobre el coste debe incluir la información previa que recibe el cliente?",
+        "answer": "La información previa que recibe el cliente debe incluir la tasa anual equivalente, salvo en el caso de los contratos en los que el crédito se conceda en forma de posibilidad de descubierto y que deban reembolsarse previa petición o en el plazo de tres meses. Esto se establece en el artículo 4, segundo párrafo del texto referido. \n\nNo hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué se entiende por reembolso anticipado en la directiva?",
+        "answer": "El reembolso anticipado se entiende como el derecho del consumidor a liquidar anticipadamente, de forma total o parcial, las obligaciones derivadas del contrato de crédito. [4fa8f08b1a-0188]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Cuánto pueden suponer como máximo los gastos mínimos de un crédito reembolsable en tres meses para considerarse gratuito?",
+        "answer": "El máximo de los gastos mínimos de un crédito reembolsable en tres meses para considerarse gratuito es del 1 por ciento del importe total del crédito, excluidos los impuestos, según el artículo 6 de la Ley 16/2011 de crédito consumo. Esto se menciona en el pasaje [4fa8f08b1a-0133].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué ocurre con los contratos de crédito vigentes cuando empiece a aplicarse la nueva directiva?",
+        "answer": "La Directiva 2008/48/CE queda derogada con efecto a partir del 20 de noviembre de 2026. No obstante lo dispuesto en el párrafo primero, la Directiva 2008/48/CE seguirá aplicándose a los contratos de crédito vigentes a 20 de noviembre de 2026 hasta su terminación. Los artículos 23 y 24, el artículo 25, apartado 1, segunda frase, el artículo 25, apartado 2, y los artículos 28 y 39 de la presente Directiva se aplicarán a todos los contratos de crédito de duración indefinida vigentes a 20 de noviembre de 2026. Las referencias a la Directiva derogada se entenderán hechas a la presente Directiva y se leerán con arreglo a la tabla de correspondencias que figura en el anexo IV. \n\nNo hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué debe hacer el prestamista cuando rechaza una solicitud de crédito por lo que consta en una base de datos?",
+        "answer": "El prestamista debe informar al consumidor inmediatamente y sin cargo del resultado de la consulta de una base de datos, así como de los detalles de dicha consulta y las categorías de los datos tenidos en cuenta. Además, los Estados miembros deben asegurar que se informe a los consumidores sobre el registro de cualquier mora en el reembolso del crédito en una base de datos en tiempo oportuno y en un plazo de treinta días a partir del registro, por ejemplo enviándoles una advertencia por correo electrónico pidiéndoles acceder a la base de datos para ver su propia información sobre moras en el reembolso del crédito. [55643636df-0064]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué derecho tiene el cliente sobre la prima de un seguro vinculado al crédito si desiste del contrato?",
+        "answer": "El cliente tiene derecho al reembolso de la parte de prima no consumida si desiste del contrato de crédito, especialmente si el seguro es vinculado al crédito. Este derecho se establece en el artículo 4 de la ley [4fa8f08b1a-0183].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cómo se supone que se devuelve un crédito de duración indefinida a efectos de calcular la TAE?",
+        "answer": "La duración de un crédito de duración indefinida se supone que se concede por un período de un año a partir de la fecha de la disposición de fondos inicial, y el pago final hecho por el consumidor liquida el saldo de capital, intereses y otros gastos, en su caso. Además, se presume que el consumidor devuelve el crédito en doce plazos mensuales iguales, a partir de un mes después de la fecha de la disposición de fondos inicial. Si el capital tiene que ser reembolsado en un pago único, se presume que se producen disposiciones y reembolsos sucesivos del total del capital por parte del consumidor a lo largo del período de un año. Los intereses y otros gastos se aplicarán de conformidad con estas disposiciones y reembolsos de capital y conforme a lo establecido en el contrato de crédito. \n\nNo hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué debe entregar el prestamista, además del formulario normalizado, si el consumidor lo pide?",
+        "answer": "El prestamista debe entregar, además del formulario normalizado, una copia gratuita del proyecto del contrato de crédito, a condición de que en el momento de la solicitud el prestamista esté dispuesto a proceder a celebrar el contrato de crédito con el consumidor. Esto se menciona en el párrafo [55643636df-0146].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Con qué precisión se expresa el resultado del cálculo de la TAE y cómo se redondea?",
+        "answer": "El resultado del cálculo se expresa con una precisión de un decimal como mínimo. Si la cifra del decimal siguiente es superior o igual a 5, el primer decimal se redondeará a la cifra superior. [4fa8f08b1a-0213]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cuándo debe avisar el prestamista a un cliente de un descubierto tácito importante?",
+        "answer": "Los Estados miembros exigirán al prestamista que notifique al consumidor en la manera que se haya convenido cuando deja de permitirse el descubierto tácito o cuándo se reduce el límite del descubierto tácito al menos treinta días antes de la fecha en que surta efecto la cancelación o reducción efectiva del descubierto tácito. [4fa8f08b1a-0175]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cuándo entró en vigor la Ley de contratos de crédito al consumo?",
+        "answer": "La Ley de contratos de crédito al consumo entrará en vigor a los tres meses de su completa publicación en el «Boletín Oficial del Estado». \n\nEsta información se encuentra en el pasaje [4fa8f08b1a-0208].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué consecuencia tiene para el contrato que el prestamista no cumpla los requisitos de información previa?",
+        "answer": "El incumplimiento de los requisitos relativos a la información previa y al suministro de la misma que se establecen en los artículos 10 y 12 dará lugar a la anulabilidad del contrato. En caso de que se mantenga la eficacia del contrato, éste se integrará conforme a lo previsto en el Texto Refundido de la Ley General para la Defensa de los Consumidores y Usuarios y otras leyes complementarias, aprobado por Real Decreto Legislativo 1/2007, de 16 de noviembre, y demás normas aplicables. [4fa8f08b1a-0144]",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Existe un tope absoluto a la compensación que puede exigir el prestamista por amortización anticipada?",
+        "answer": "Yes, there is an absolute limit on the compensation that the lender can claim for early repayment. According to the retrieved information, if the early repayment occurs within a period during which the debtor's interest rate is fixed, the compensation cannot exceed 1% of the amount of the loan. If the remaining period between the early repayment and the agreed end date of the contract is longer than one year, the compensation cannot exceed 0.5% of the amount of the loan. \n\nThe passage that supports this is [4fa8f08b1a-0188].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Hasta cuándo puede alargarse el plazo para desistir si el cliente no recibió las condiciones y la información obligatorias?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Para cuándo deben comunicar los Estados miembros a la Comisión su régimen de sanciones?",
+        "answer": "Los Estados miembros deben comunicar su régimen de sanciones a la Comisión a más tardar el 20 de noviembre de 2026. Esto se establece en el artículo 91 [55643636df-0097].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Quién puede fijar supuestos adicionales para calcular la TAE en España?",
+        "answer": "El Ministerio de Economía y Hacienda puede fijar supuestos adicionales para calcular la TAE en España, según el texto recuperado [4fa8f08b1a-0205].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿En qué plazo debe informarse al consumidor de que se ha registrado una mora suya en una base de datos?",
+        "answer": "El plazo para informar al consumidor de que se ha registrado una mora suya en una base de datos es de treinta días a partir del registro. Esto se menciona en el artículo [55643636df-0172].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Cuánto preaviso puede exigirse al consumidor para terminar un crédito de duración indefinida?",
+        "answer": "El preaviso que puede exigirse al consumidor para terminar un crédito de duración indefinida es de al menos dos meses, según los pasajes mencionados. Esto se encuentra en el párrafo 2 de la ley [4fa8f08b1a-0182].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué supuesto se hace para calcular la TAE cuando el crédito tiene un periodo inicial de tipo fijo?",
+        "answer": "El supuesto que se hace para calcular la TAE cuando el crédito tiene un periodo inicial de tipo fijo es que, al final del período del tipo deudor fijo, el tipo deudor será el mismo que el vigente en el momento de calcularse la TAE, en función del valor del indicador convenido en ese momento. Este supuesto se menciona en el pasaje [55643636df-0258].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué derecho sobre la consulta de bases de datos debe constar entre la información del contrato?",
+        "answer": "La información sobre la consulta de bases de datos que debe constar entre la información del contrato es el derecho de conformidad con el Reglamento (UE) 2016/679, que incluye los derechos de acceso, rectificación, supresión, unión, limitación, portabilidad y oposición. Este derecho debe estar claramente establecido en el contrato de crédito. \n\nNo hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué norma de protección de datos se aplica sin perjuicio de la directiva?",
+        "answer": "La norma de protección de datos que se aplica sin perjuicio de la Directiva es el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE (Reglamento general de protección de datos) [55643636df-0032].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Qué créditos de pago aplazado de deudas quedan fuera del ámbito de la directiva?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Mediante qué documento puede el prestamista cumplir sus obligaciones de información previa?",
+        "answer": "El prestamista puede cumplir sus obligaciones de información previa mediante un documento aparte, al igual que cualquier otra información adicional que el prestamista desee proporcionar al consumidor. Este documento aparte podría adjuntarse al formulario de Información Normalizada Europea sobre el Crédito al Consumo.\n\nLa información se encuentra en el documento [55643636df-0065].",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿A qué vía de reclamación tiene derecho el consumidor si surge un conflicto con el prestamista?",
+        "answer": "El consumidor tiene derecho a recurrir a un mecanismo extrajudicial de reclamación y recurso si surge un conflicto con el prestamista. Este mecanismo se describe en el texto [55643636df-0249], que menciona que el consumidor tiene derecho a recurrir a un mecanismo extrajudicial de reclamación y recurso.",
+        "abstained": false,
+        "cited": 1,
+        "invalid_citations": 0,
+        "cites_relevant": true,
+        "retrieved_relevant": true
+      },
+      {
+        "question": "¿Quién ganó el último campeonato del mundo de fútbol?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Cuál es la receta tradicional de la paella valenciana?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Cómo se declara el IRPF de un trabajador autónomo en Alemania?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué rentabilidad tuvo el Ibex 35 el año pasado?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Cuál es el tipo de interés exacto que cobra hoy el Banco Santander por un préstamo personal?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué puntuación de scoring necesito para que me concedan una tarjeta de crédito?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Cuántas ejecuciones hipotecarias hubo en España en 2019?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      },
+      {
+        "question": "¿Qué dice la normativa sobre criptoactivos como garantía de un préstamo?",
+        "answer": "No hay información suficiente en los documentos para responder a esa pregunta.",
+        "abstained": true,
+        "cited": 0,
+        "invalid_citations": 0,
+        "cites_relevant": false,
+        "retrieved_relevant": false
+      }
+    ]
+  }
+}

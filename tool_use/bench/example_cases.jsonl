@@ -1,3 +1,0 @@
-{"query": "What is the temperature in Paris right now, in Celsius?", "needs_tool": true, "expected_tool": "get_weather", "expected_arguments": {"location": "Paris, France"}}
-{"query": "Compute (12.5 * 3) / 2 - 1 and give me the number.", "needs_tool": true, "expected_tool": "calculator", "expected_arguments": {"expression": "(12.5 * 3) / 2 - 1"}}
-{"query": "Explain in one sentence what a tool call is.", "needs_tool": false}
