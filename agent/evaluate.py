@@ -72,13 +72,16 @@ def main() -> None:
         n = max(len(rows), 1)
         results[brain] = {
             "success_rate": sum(r["correct"] for r in rows) / n,
+            "required_tools_rate": sum(r["required_tools_used"] for r in rows) / n,
             "mean_steps": sum(r["n_steps"] for r in rows) / n,
             "mean_tokens": sum(r["tokens_used"] for r in rows) / n,
             "rows": rows,
         }
         print(
             f"{brain:>9}: success {results[brain]['success_rate']:.2f} "
-            f"· steps {results[brain]['mean_steps']:.1f}"
+            f"· required tools {results[brain]['required_tools_rate']:.2f} "
+            f"· steps {results[brain]['mean_steps']:.1f} "
+            f"· tokens {results[brain]['mean_tokens']:.0f}"
         )
 
     out = Path(args.out)

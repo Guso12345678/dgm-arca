@@ -8,37 +8,75 @@ dist/
 
 # Entornos y secretos
 .env
+.env.*
+!.env.example
+*.pem
+*.key
 
 # Pesos, datos, índices y cachés de modelos
 rlm/weights/*
 !rlm/weights/.gitkeep
 rag/corpus/*
 !rag/corpus/.gitkeep
+!rag/corpus/README.md
 rag/index/
 outputs/
 runs/
 wandb/
 .cache/
 hf_cache/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.gguf
 
 # Resultados y gráficas grandes
-reports/*.png
 reports/*.csv
+reports/*.png
+# Estas dos sí se suben (las pide el informe y la defensa)
+!reports/phase1_grpo_curves.png
+!reports/phase1_grpo_history.json
+
+# Logs y salidas de ejecución
+*.log
+nohup.out
 
 # LaTeX (el .tex y el .pdf sí se versionan)
 *.aux
-*.log
 *.out
 *.toc
 *.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.lof
+*.lot
+
+# Túnel ngrok (el binario y la configuración con el authtoken no se suben)
+/ngrok
+ngrok
+ngrok.exe
+ngrok*.tgz
+ngrok*.zip
+ngrok.yml
+.ngrok2/
+
+# Scripts de depuración y zips de entrega
+diag4.py
+diag_gen.py
+raw4.py
+/*.zip
 
 # Herramientas
 .pytest_cache/
 .ruff_cache/
 .ipynb_checkpoints/
+.mypy_cache/
 
-# Sistema
+# Editor y sistema
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
-!rag/corpus/README.md
-grpo.log

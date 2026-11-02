@@ -1,59 +1,0 @@
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-50 gold questions, 2 documents
-Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]Loading weights: 100%|██████████| 310/310 [00:00<00:00, 9037.44it/s]
-Batches:   0%|          | 0/27 [00:00<?, ?it/s]Batches:   4%|▎         | 1/27 [00:02<00:59,  2.29s/it]Batches:   7%|▋         | 2/27 [00:03<00:35,  1.43s/it]Batches:  11%|█         | 3/27 [00:04<00:29,  1.24s/it]Batches:  15%|█▍        | 4/27 [00:04<00:23,  1.02s/it]Batches:  19%|█▊        | 5/27 [00:05<00:21,  1.01it/s]Batches:  22%|██▏       | 6/27 [00:06<00:20,  1.03it/s]Batches:  26%|██▌       | 7/27 [00:07<00:19,  1.04it/s]Batches:  30%|██▉       | 8/27 [00:08<00:16,  1.15it/s]Batches:  33%|███▎      | 9/27 [00:09<00:15,  1.13it/s]Batches:  37%|███▋      | 10/27 [00:09<00:13,  1.24it/s]Batches:  41%|████      | 11/27 [00:10<00:12,  1.30it/s]Batches:  44%|████▍     | 12/27 [00:11<00:12,  1.25it/s]Batches:  48%|████▊     | 13/27 [00:12<00:11,  1.23it/s]Batches:  52%|█████▏    | 14/27 [00:13<00:10,  1.22it/s]Batches:  56%|█████▌    | 15/27 [00:13<00:09,  1.32it/s]Batches:  59%|█████▉    | 16/27 [00:14<00:08,  1.27it/s]Batches:  63%|██████▎   | 17/27 [00:14<00:05,  1.71it/s]Batches:  67%|██████▋   | 18/27 [00:15<00:05,  1.52it/s]Batches:  70%|███████   | 19/27 [00:15<00:03,  2.03it/s]Batches:  74%|███████▍  | 20/27 [00:16<00:04,  1.69it/s]Batches:  78%|███████▊  | 21/27 [00:17<00:03,  1.69it/s]Batches:  81%|████████▏ | 22/27 [00:17<00:03,  1.53it/s]Batches:  85%|████████▌ | 23/27 [00:18<00:02,  1.59it/s]Batches:  89%|████████▉ | 24/27 [00:19<00:02,  1.46it/s]Batches:  93%|█████████▎| 25/27 [00:19<00:01,  1.53it/s]Batches:  96%|█████████▋| 26/27 [00:20<00:00,  1.61it/s]Batches: 100%|██████████| 27/27 [00:20<00:00,  1.69it/s]Batches: 100%|██████████| 27/27 [00:20<00:00,  1.29it/s]
-Batches:   0%|          | 0/20 [00:00<?, ?it/s]Batches:   5%|▌         | 1/20 [00:01<00:28,  1.49s/it]Batches:  10%|█         | 2/20 [00:02<00:20,  1.16s/it]Batches:  15%|█▌        | 3/20 [00:03<00:17,  1.04s/it]Batches:  20%|██        | 4/20 [00:04<00:15,  1.03it/s]Batches:  25%|██▌       | 5/20 [00:05<00:13,  1.08it/s]Batches:  30%|███       | 6/20 [00:05<00:12,  1.11it/s]Batches:  40%|████      | 8/20 [00:06<00:06,  2.00it/s]Batches:  50%|█████     | 10/20 [00:06<00:04,  2.30it/s]Batches:  55%|█████▌    | 11/20 [00:07<00:04,  2.13it/s]Batches:  60%|██████    | 12/20 [00:07<00:03,  2.02it/s]Batches:  65%|██████▌   | 13/20 [00:08<00:03,  1.76it/s]Batches:  70%|███████   | 14/20 [00:09<00:03,  1.60it/s]Batches:  80%|████████  | 16/20 [00:10<00:02,  1.88it/s]Batches:  85%|████████▌ | 17/20 [00:11<00:01,  1.71it/s]Batches:  90%|█████████ | 18/20 [00:11<00:01,  1.76it/s]Batches: 100%|██████████| 20/20 [00:12<00:00,  2.04it/s]Batches: 100%|██████████| 20/20 [00:12<00:00,  1.62it/s]
-50 of 50 questions resolve under every strategy
-evaluating recursive-800 (543 chunks)...
-evaluating semantic-0.7 (498 chunks)...
-evaluating semantic-p70 (605 chunks)...
-evaluating semantic-p80 (496 chunks)...
-
-== Chunking ==
-strategy                chunks      mean       min       max evaluated      lost
-recursive-800              543       690        51       799        50         0
-semantic-0.7               498       719         3      1500        50         0
-semantic-p70               605       592         3      1500        50         0
-semantic-p80               496       722         3      1500        50         0
-
-== Retrievers (Recall@5 / MRR) ==
-strategy                        bm25           dense           hybrid (best λ)
-recursive-800          0.650 / 0.423   0.530 / 0.426     0.650 / 0.497 (λ=0.7)
-semantic-0.7           0.680 / 0.546   0.660 / 0.503     0.740 / 0.632 (λ=0.6)
-semantic-p70           0.660 / 0.527   0.620 / 0.401     0.740 / 0.580 (λ=0.5)
-semantic-p80           0.660 / 0.546   0.590 / 0.465     0.720 / 0.611 (λ=0.5)
-
-== Abstention gate ==
- {
-  "answerable": {
-    "mean": 0.7028361451625824,
-    "min": 0.5703440308570862,
-    "max": 0.8620414137840271
-  },
-  "unanswerable": {
-    "mean": 0.424586221575737,
-    "min": 0.2630036473274231,
-    "max": 0.5675723552703857
-  },
-  "balanced": 0.5703440308570862,
-  "balanced_accuracy": 1.0,
-  "keep_all": 0.5703440308570862
-}
-Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 8759.37it/s]
-
-== Generation ==
- {
-  "answerable": {
-    "n": 50,
-    "with_citation": 0.7,
-    "invalid_citation_rate": 0.0,
-    "cites_relevant_chunk": 0.32,
-    "wrongly_abstained": 0.32
-  },
-  "unanswerable": {
-    "n": 8,
-    "abstained": 1.0
-  }
-}
-
-results -> reports/phase3_eval.json

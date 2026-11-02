@@ -51,8 +51,16 @@ def parse_trainer_state(path: Path) -> list[dict]:
     return [r for r in state.get("log_history", []) if "reward" in r]
 
 
+def as_float(value) -> float | None:
+    """TRL prints its metrics as strings in the log ('1.25'); the JSON state has numbers."""
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
 def column(rows: list[dict], *names: str) -> list[float | None]:
-    return [next((r[n] for n in names if n in r), None) for r in rows]
+    return [as_float(next((r[n] for n in names if n in r), None)) for r in rows]
 
 
 def cmd_curves(args: argparse.Namespace) -> None:
@@ -62,7 +70,7 @@ def cmd_curves(args: argparse.Namespace) -> None:
         rows = parse_log(Path(args.log))
     if not rows:
         raise SystemExit("no reward rows found: check the path (log lines must contain 'reward')")
-    steps = [r.get("step", i + 1) for i, r in enumerate(rows)]
+    steps = [as_float(r.get("step")) or i + 1 for i, r in enumerate(rows)]
     series = {
         "reward (total)": column(rows, "reward"),
         "format_reward": column(rows, "rewards/format_reward/mean"),
@@ -103,8 +111,17 @@ def cmd_curves(args: argparse.Namespace) -> None:
             ax.legend()
     fig.tight_layout()
     fig.savefig(out / "phase1_grpo_curves.png", dpi=150)
-    first, last = (series["reward (total)"][0], series["reward (total)"][-1])
-    print(f"{len(rows)} pasos · reward {first:.3f} -> {last:.3f}")
+    rewards = [y for y in series["reward (total)"] if y is not None]
+    tail = rewards[-10:]
+    print(
+        f"{len(rows)} pasos · reward {rewards[0]:.3f} -> {rewards[-1]:.3f} "
+        f"(media primeros 10: {sum(rewards[:10]) / len(rewards[:10]):.3f}, "
+        f"últimos 10: {sum(tail) / len(tail):.3f})"
+    )
+    for name, ys in series.items():
+        ys = [y for y in ys if y is not None]
+        if ys:
+            print(f"  {name:<16} inicio {ys[0]:.3f} · fin {ys[-1]:.3f} · máx {max(ys):.3f}")
     print(f"-> {out / 'phase1_grpo_history.json'}, {out / 'phase1_grpo_curves.png'}")
 
 

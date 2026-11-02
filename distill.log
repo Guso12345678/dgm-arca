@@ -1,100 +1,0 @@
-nohup: ignoring input
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   1%|          | 2/398 [00:00<00:20, 19.48it/s]Loading weights:  12%|█▏        | 46/398 [00:00<00:01, 259.94it/s]Loading weights:  21%|██▏       | 85/398 [00:00<00:00, 316.37it/s]Loading weights:  31%|███▏      | 125/398 [00:00<00:00, 345.39it/s]Loading weights:  42%|████▏     | 168/398 [00:00<00:00, 367.15it/s]Loading weights:  52%|█████▏    | 207/398 [00:00<00:00, 373.29it/s]Loading weights:  62%|██████▏   | 246/398 [00:00<00:00, 377.70it/s]Loading weights:  72%|███████▏  | 287/398 [00:00<00:00, 387.76it/s]Loading weights:  82%|████████▏ | 326/398 [00:00<00:00, 380.70it/s]Loading weights:  92%|█████████▏| 367/398 [00:01<00:00, 383.49it/s]Loading weights: 100%|██████████| 398/398 [00:01<00:00, 362.19it/s]
-[4/381] 1/16 trazas verificadas
-[8/381] 8/32 trazas verificadas
-[12/381] 17/48 trazas verificadas
-[16/381] 22/64 trazas verificadas
-[20/381] 27/80 trazas verificadas
-[24/381] 30/96 trazas verificadas
-[28/381] 41/112 trazas verificadas
-[32/381] 43/128 trazas verificadas
-[36/381] 47/144 trazas verificadas
-[40/381] 49/160 trazas verificadas
-[44/381] 54/176 trazas verificadas
-[48/381] 59/192 trazas verificadas
-[52/381] 67/208 trazas verificadas
-[56/381] 70/224 trazas verificadas
-[60/381] 79/240 trazas verificadas
-[64/381] 83/256 trazas verificadas
-[68/381] 84/272 trazas verificadas
-[72/381] 89/288 trazas verificadas
-[76/381] 94/304 trazas verificadas
-[80/381] 107/320 trazas verificadas
-[84/381] 110/336 trazas verificadas
-[88/381] 119/352 trazas verificadas
-[92/381] 127/368 trazas verificadas
-[96/381] 142/384 trazas verificadas
-[100/381] 155/400 trazas verificadas
-[104/381] 161/416 trazas verificadas
-[108/381] 166/432 trazas verificadas
-[112/381] 170/448 trazas verificadas
-[116/381] 180/464 trazas verificadas
-[120/381] 186/480 trazas verificadas
-[124/381] 197/496 trazas verificadas
-[128/381] 207/512 trazas verificadas
-[132/381] 207/528 trazas verificadas
-[136/381] 214/544 trazas verificadas
-[140/381] 219/560 trazas verificadas
-[144/381] 224/576 trazas verificadas
-[148/381] 230/592 trazas verificadas
-[152/381] 233/608 trazas verificadas
-[156/381] 245/624 trazas verificadas
-[160/381] 251/640 trazas verificadas
-[164/381] 253/656 trazas verificadas
-[168/381] 253/672 trazas verificadas
-[172/381] 257/688 trazas verificadas
-[176/381] 265/704 trazas verificadas
-[180/381] 273/720 trazas verificadas
-[184/381] 276/736 trazas verificadas
-[188/381] 276/752 trazas verificadas
-[192/381] 277/768 trazas verificadas
-[196/381] 279/784 trazas verificadas
-[200/381] 287/800 trazas verificadas
-[204/381] 288/816 trazas verificadas
-[208/381] 299/832 trazas verificadas
-[212/381] 309/848 trazas verificadas
-[216/381] 312/864 trazas verificadas
-[220/381] 321/880 trazas verificadas
-[224/381] 324/896 trazas verificadas
-[228/381] 333/912 trazas verificadas
-[232/381] 341/928 trazas verificadas
-[236/381] 348/944 trazas verificadas
-[240/381] 352/960 trazas verificadas
-[244/381] 354/976 trazas verificadas
-[248/381] 363/992 trazas verificadas
-[252/381] 372/1008 trazas verificadas
-[256/381] 384/1024 trazas verificadas
-[260/381] 392/1040 trazas verificadas
-[264/381] 399/1056 trazas verificadas
-[268/381] 409/1072 trazas verificadas
-[272/381] 414/1088 trazas verificadas
-[276/381] 422/1104 trazas verificadas
-[280/381] 436/1120 trazas verificadas
-[284/381] 444/1136 trazas verificadas
-[288/381] 449/1152 trazas verificadas
-[292/381] 451/1168 trazas verificadas
-[296/381] 455/1184 trazas verificadas
-[300/381] 466/1200 trazas verificadas
-[304/381] 473/1216 trazas verificadas
-[308/381] 476/1232 trazas verificadas
-[312/381] 484/1248 trazas verificadas
-[316/381] 489/1264 trazas verificadas
-[320/381] 494/1280 trazas verificadas
-[324/381] 497/1296 trazas verificadas
-[328/381] 505/1312 trazas verificadas
-[332/381] 506/1328 trazas verificadas
-[336/381] 511/1344 trazas verificadas
-[340/381] 516/1360 trazas verificadas
-[344/381] 519/1376 trazas verificadas
-[348/381] 530/1392 trazas verificadas
-[352/381] 533/1408 trazas verificadas
-[356/381] 541/1424 trazas verificadas
-[360/381] 544/1440 trazas verificadas
-[364/381] 554/1456 trazas verificadas
-[368/381] 557/1472 trazas verificadas
-[372/381] 562/1488 trazas verificadas
-[376/381] 567/1504 trazas verificadas
-[380/381] 579/1520 trazas verificadas
-[381/381] 579/1524 trazas verificadas
-579/1524 traces verified (38.0%) -> rlm/data/sft_traces.jsonl

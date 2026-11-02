@@ -167,8 +167,11 @@ class RagPipeline:
         pipeline.min_similarity = min_similarity
         return pipeline
 
-    def load(self) -> None:
+    def load(self, with_generator: bool = True) -> None:
         """Ingest -> chunk -> build the three retrievers -> load the generator model.
+
+        ``with_generator=False`` stops after the retrievers: the phase-4 agent only searches,
+        and the answer is written by its own brain, so it does not need a second LLM in memory.
 
         The dense index is persisted under ``rag/index/`` so this is fast after the first run.
         The generator is the base Qwen3-1.7B (phase 1's LoRA adapter is for the 0.6B model);
@@ -213,9 +216,10 @@ class RagPipeline:
         self.dense = dense
         self.min_similarity = float(os.environ.get("ARCA_RAG_MIN_SIMILARITY", 0.0))
         self.model_name = os.environ.get("ARCA_RAG_MODEL", DEFAULT_GENERATOR)
-        self.generate_fn = load_chat_generator(
-            self.model_name, int(os.environ.get("ARCA_RAG_MAX_NEW_TOKENS", 400))
-        )
+        if with_generator:
+            self.generate_fn = load_chat_generator(
+                self.model_name, int(os.environ.get("ARCA_RAG_MAX_NEW_TOKENS", 400))
+            )
 
     def retrieve(self, question: str, top_k: int, retriever: str) -> list[Hit]:
         """Dispatch to the dense, bm25 or hybrid retriever."""
@@ -259,6 +263,25 @@ def build_pipeline() -> RagPipeline:
         pipeline.load()
         _pipeline = pipeline
     return _pipeline
+
+
+_retrieval_pipeline: RagPipeline | None = None
+
+
+def build_retrieval_pipeline() -> RagPipeline:
+    """Retrievers only, without the generator: what the agent's ``search_knowledge_base`` uses.
+
+    If ``/rag`` already built the full pipeline in this process, that one is reused, so the
+    corpus is ingested and the index loaded once.
+    """
+    global _retrieval_pipeline
+    if _pipeline is not None:
+        return _pipeline
+    if _retrieval_pipeline is None:
+        pipeline = RagPipeline()
+        pipeline.load(with_generator=False)
+        _retrieval_pipeline = pipeline
+    return _retrieval_pipeline
 
 
 def answer_with_rag(question: str, top_k: int = 5, retriever: str = "hybrid") -> RagResponse:

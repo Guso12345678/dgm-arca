@@ -1,16 +1,10 @@
 """Checks for the hand-written GRPO step. They pass once you implement rlm/grpo_step.py."""
 
-import pytest
 import torch
 
 from rlm import grpo_step
 
-pending = pytest.mark.xfail(
-    raises=NotImplementedError, reason="Tu turno: rlm/grpo_step.py", strict=False
-)
 
-
-@pending
 def test_advantages_are_centered_and_scaled():
     rewards = torch.tensor([1.0, 0.0, 1.0, 0.0])
     adv = grpo_step.group_advantages(rewards)
@@ -20,19 +14,16 @@ def test_advantages_are_centered_and_scaled():
     assert torch.allclose(unscaled, torch.tensor([0.5, -0.5, 0.5, -0.5]))
 
 
-@pending
 def test_uniform_rewards_give_zero_advantage():
     adv = grpo_step.group_advantages(torch.ones(8))
     assert torch.allclose(adv, torch.zeros(8), atol=1e-6)
 
 
-@pending
 def test_ratio_is_one_when_policies_match():
     logp = torch.randn(4, 6)
     assert torch.allclose(grpo_step.policy_ratio(logp, logp.clone()), torch.ones(4, 6))
 
 
-@pending
 def test_clipping_limits_positive_and_negative_advantages():
     ratio = torch.tensor([[2.0], [0.2]])
     adv = torch.tensor([1.0, -1.0])
@@ -43,14 +34,12 @@ def test_clipping_limits_positive_and_negative_advantages():
     assert torch.isclose(obj[1, 0], torch.tensor(-0.8))
 
 
-@pending
 def test_kl_penalty_is_nonnegative_and_zero_at_equality():
     logp = torch.randn(3, 5)
     assert torch.allclose(grpo_step.kl_penalty(logp, logp), torch.zeros(3, 5), atol=1e-6)
     assert (grpo_step.kl_penalty(logp, logp + 0.3) >= 0).all()
 
 
-@pending
 def test_loss_pushes_probability_of_better_outputs_up():
     torch.manual_seed(0)
     logp_old = torch.log(torch.full((4, 5), 0.5))
