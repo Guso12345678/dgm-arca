@@ -34,6 +34,8 @@ hf_cache/
 # Resultados y gráficas grandes
 reports/*.csv
 reports/*.png
+report/figs/*.pdf
+report/figs/*.png
 # Estas dos sí se suben (las pide el informe y la defensa)
 !reports/phase1_grpo_curves.png
 !reports/phase1_grpo_history.json
